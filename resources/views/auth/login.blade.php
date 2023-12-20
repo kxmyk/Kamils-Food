@@ -5,7 +5,7 @@
     <!--=============================
         BREADCRUMB START
     ==============================-->
-    <section class="fp__breadcrumb" style="background: url({{ config('settings.breadcrumb') }});">
+    <section class="fp__breadcrumb" style="background: url({{ ('frontend/images/counter_bg.jpg') }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
                 <div class="fp__breadcrumb_text">
