@@ -39,7 +39,9 @@
                     <h4>Update Password</h4>
                 </div>
                 <div class="card-body">
-                    <form action=''>
+                    <form action='{{ route('admin.profile.password.update') }}' method='POST'>
+                        @csrf
+                        @method('PUT')
                         <div class="form-group">
                             <label>Current Password</label>
                             <input type="password"
@@ -53,7 +55,7 @@
                                    name='password'>
                         </div>
                         <div class="form-group">
-                            <label>Confirm Password</label>
+                            <label>Confirm New Password</label>
                             <input type="password"
                                    class="form-control"
                                    name='password_confirmation'>
