@@ -1,25 +1,38 @@
 @php use function Laravel\Prompts\error; @endphp
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi" />
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi"/>
     <title>KamilsFood || Restaurant Template</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="{{ asset('frontend/css/all.min')}}.css">
-    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min')}}.css">
-    <link rel="stylesheet" href="{{ asset('frontend/css/spacing.css')}}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/slick.css')}}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/nice-select')}}.css">
-    <link rel="stylesheet" href="{{ asset('frontend/css/venobox.min')}}.css">
-    <link rel="stylesheet" href="{{ asset('frontend/css/animate.css')}}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/jquery.exzoom')}}.css">
+    <link rel="icon"
+          type="image/png"
+          href="images/favicon.png">
+    <link rel="stylesheet"
+          href="{{ asset('frontend/css/all.min')}}.css">
+    <link rel="stylesheet"
+          href="{{ asset('frontend/css/bootstrap.min')}}.css">
+    <link rel="stylesheet"
+          href="{{ asset('frontend/css/spacing.css')}}">
+    <link rel="stylesheet"
+          href="{{ asset('frontend/css/slick.css')}}">
+    <link rel="stylesheet"
+          href="{{ asset('frontend/css/nice-select')}}.css">
+    <link rel="stylesheet"
+          href="{{ asset('frontend/css/venobox.min')}}.css">
+    <link rel="stylesheet"
+          href="{{ asset('frontend/css/animate.css')}}">
+    <link rel="stylesheet"
+          href="{{ asset('frontend/css/jquery.exzoom')}}.css">
 
-    <link rel="stylesheet" href="{{ asset('frontend/css/style.css')}}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css')}}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/toastr.min.css')}}">
+    <link rel="stylesheet"
+          href="{{ asset('frontend/css/style.css')}}">
+    <link rel="stylesheet"
+          href="{{ asset('frontend/css/responsive.css')}}">
+    <link rel="stylesheet"
+          href="{{ asset('frontend/css/toastr.min.css')}}">
     <!-- <link rel="stylesheet" href="css/rtl.css"> -->
 </head>
 
@@ -40,10 +53,10 @@
             </div>
             <div class="col-xl-6 col-md-4 d-none d-md-block">
                 <ul class="topbar_icon d-flex flex-wrap">
-                    <li><a href="#"><i class="fab fa-facebook-f"></i></a> </li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a> </li>
-                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a> </li>
-                    <li><a href="#"><i class="fab fa-behance"></i></a> </li>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#"><i class="fab fa-behance"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -118,9 +131,9 @@
 <script>
     toastr.options.progressBar = true;
     @if ($errors->any())
-        @foreach($errors->all() as $error)
-            toastr.error("{{$error}}");
-        @endforeach
+    @foreach($errors->all() as $error)
+    toastr.error("{{$error}}");
+    @endforeach
     @endif
 </script>
 

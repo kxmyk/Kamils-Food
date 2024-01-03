@@ -1,19 +1,25 @@
 <footer>
     <div class="footer_overlay pt_100 xs_pt_70 pb_100 xs_pb_70">
-        <div class="container wow fadeInUp" data-wow-duration="1s">
+        <div class="container wow fadeInUp"
+             data-wow-duration="1s">
             <div class="row justify-content-between">
                 <div class="col-lg-4 col-sm-8 col-md-6">
                     <div class="fp__footer_content">
-                        <a class="footer_logo" href="index.html">
-                            <img src="images/footer_logo.png" alt="KamilsFood" class="img-fluid w-100">
+                        <a class="footer_logo"
+                           href="index.html">
+                            <img src="images/footer_logo.png"
+                                 alt="KamilsFood"
+                                 class="img-fluid w-100">
                         </a>
                         <span>There are many variations of Lorem Ipsum available, but the majority have
                                 suffered.</span>
                         <p class="info"><i class="far fa-map-marker-alt"></i> 7232 Broadway Suite 308, Jackson
                             Heights, 11372, NY, United States</p>
-                        <a class="info" href="callto:1234567890123"><i class="fas fa-phone-alt"></i>
+                        <a class="info"
+                           href="callto:1234567890123"><i class="fas fa-phone-alt"></i>
                             +1347-430-9510</a>
-                        <a class="info" href="mailto:KamilsFood@gmail.com"><i class="fas fa-envelope"></i>
+                        <a class="info"
+                           href="mailto:KamilsFood@gmail.com"><i class="fas fa-envelope"></i>
                             KamilsFood@gmail.com</a>
                     </div>
                 </div>
@@ -45,7 +51,8 @@
                     <div class="fp__footer_content">
                         <h3>subscribe</h3>
                         <form>
-                            <input type="text" placeholder="Subscribe">
+                            <input type="text"
+                                   placeholder="Subscribe">
                             <button>Subscribe</button>
                         </form>
                         <div class="fp__footer_social_link">
