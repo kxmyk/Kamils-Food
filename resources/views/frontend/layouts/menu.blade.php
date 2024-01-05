@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg main_menu">
     <div class="container">
         <a class="navbar-brand"
-           href="index.html">
+           href="{{ url('/') }}">
             <img src="images/logo.png"
                  alt="KamilsFood"
                  class="img-fluid">
@@ -21,7 +21,7 @@
                 <li class="nav-item">
                     <a class="nav-link active"
                        aria-current="page"
-                       href="index.html">Home</a>
+                       href="{{ url('/') }}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link"
@@ -81,7 +81,7 @@
                     <a class="cart_icon"><i class="fas fa-shopping-basket"></i> <span>5</span></a>
                 </li>
                 <li>
-                    <a href="dashboard.html"><i class="fas fa-user"></i></a>
+                    <a href="{{ route('login') }}"><i class="fas fa-user"></i></a>
                 </li>
                 <li>
                     <a class="common_btn"
