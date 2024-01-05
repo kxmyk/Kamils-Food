@@ -5,7 +5,8 @@
     <!--=============================
         BREADCRUMB START
     ==============================-->
-    <section class="fp__breadcrumb" style="background: url(images/counter_bg.jpg);">
+    <section class="fp__breadcrumb"
+             style="background: url(images/counter_bg.jpg);">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
                 <div class="fp__breadcrumb_text">
@@ -30,57 +31,106 @@
         <div class="container">
             <div class="fp__dashboard_area">
                 <div class="row">
-                    <div class="col-xl-3 col-lg-4 wow fadeInUp" data-wow-duration="1s">
+                    <div class="col-xl-3 col-lg-4 wow fadeInUp"
+                         data-wow-duration="1s">
                         <div class="fp__dashboard_menu">
                             <div class="dasboard_header">
                                 <div class="dasboard_header_img">
-                                    <img src="images/comment_img_2.png" alt="user" class="img-fluid w-100">
+                                    <img src="images/comment_img_2.png"
+                                         alt="user"
+                                         class="img-fluid w-100">
                                     <label for="upload"><i class="far fa-camera"></i></label>
-                                    <input type="file" id="upload" hidden>
+                                    <input type="file"
+                                           id="upload"
+                                           hidden>
                                 </div>
                                 <h2>hasib ahmed</h2>
                             </div>
-                            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                            <div class="nav flex-column nav-pills"
+                                 id="v-pills-tab"
+                                 role="tablist"
                                  aria-orientation="vertical">
-                                <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
-                                        data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
-                                        aria-selected="true"><span><i class="fas fa-user"></i></span> Parsonal Info</button>
+                                <button class="nav-link active"
+                                        id="v-pills-home-tab"
+                                        data-bs-toggle="pill"
+                                        data-bs-target="#v-pills-home"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="v-pills-home"
+                                        aria-selected="true"><span><i class="fas fa-user"></i></span> Parsonal Info
+                                </button>
 
-                                <button class="nav-link" id="v-pills-address-tab" data-bs-toggle="pill"
-                                        data-bs-target="#v-pills-address" type="button" role="tab"
-                                        aria-controls="v-pills-address" aria-selected="true"><span><i
-                                            class="fas fa-user"></i></span>address</button>
+                                <button class="nav-link"
+                                        id="v-pills-address-tab"
+                                        data-bs-toggle="pill"
+                                        data-bs-target="#v-pills-address"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="v-pills-address"
+                                        aria-selected="true"><span><i
+                                            class="fas fa-user"></i></span>address
+                                </button>
 
-                                <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
-                                        data-bs-target="#v-pills-profile" type="button" role="tab"
-                                        aria-controls="v-pills-profile" aria-selected="false"><span><i
-                                            class="fas fa-bags-shopping"></i></span> Order</button>
+                                <button class="nav-link"
+                                        id="v-pills-profile-tab"
+                                        data-bs-toggle="pill"
+                                        data-bs-target="#v-pills-profile"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="v-pills-profile"
+                                        aria-selected="false"><span><i
+                                            class="fas fa-bags-shopping"></i></span> Order
+                                </button>
 
-                                <button class="nav-link" id="v-pills-messages-tab2" data-bs-toggle="pill"
-                                        data-bs-target="#v-pills-messages2" type="button" role="tab"
-                                        aria-controls="v-pills-messages2" aria-selected="false"><span><i
-                                            class="far fa-heart"></i></span> wishlist</button>
+                                <button class="nav-link"
+                                        id="v-pills-messages-tab2"
+                                        data-bs-toggle="pill"
+                                        data-bs-target="#v-pills-messages2"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="v-pills-messages2"
+                                        aria-selected="false"><span><i
+                                            class="far fa-heart"></i></span> wishlist
+                                </button>
 
-                                <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill"
-                                        data-bs-target="#v-pills-messages" type="button" role="tab"
-                                        aria-controls="v-pills-messages" aria-selected="false"><span><i
-                                            class="fas fa-star"></i></span> Reviews</button>
+                                <button class="nav-link"
+                                        id="v-pills-messages-tab"
+                                        data-bs-toggle="pill"
+                                        data-bs-target="#v-pills-messages"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="v-pills-messages"
+                                        aria-selected="false"><span><i
+                                            class="fas fa-star"></i></span> Reviews
+                                </button>
 
-                                <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
-                                        data-bs-target="#v-pills-settings" type="button" role="tab"
-                                        aria-controls="v-pills-settings" aria-selected="false"><span><i
-                                            class="fas fa-user-lock"></i></span> Change Password </button>
+                                <button class="nav-link"
+                                        id="v-pills-settings-tab"
+                                        data-bs-toggle="pill"
+                                        data-bs-target="#v-pills-settings"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="v-pills-settings"
+                                        aria-selected="false"><span><i
+                                            class="fas fa-user-lock"></i></span> Change Password
+                                </button>
 
-                                <button class="nav-link" type="button"><span> <i class="fas fa-sign-out-alt"></i>
-                                    </span> Logout</button>
+                                <button class="nav-link"
+                                        type="button"><span> <i class="fas fa-sign-out-alt"></i>
+                                    </span> Logout
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-9 col-lg-8 wow fadeInUp" data-wow-duration="1s">
+                    <div class="col-xl-9 col-lg-8 wow fadeInUp"
+                         data-wow-duration="1s">
                         <div class="fp__dashboard_content">
-                            <div class="tab-content" id="v-pills-tabContent">
+                            <div class="tab-content"
+                                 id="v-pills-tabContent">
 
-                                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                                <div class="tab-pane fade show active"
+                                     id="v-pills-home"
+                                     role="tabpanel"
                                      aria-labelledby="v-pills-home-tab">
                                     <div class="fp_dashboard_body">
                                         <h3>Welcome to your Profile</h3>
@@ -130,27 +180,33 @@
                                                         <div class="col-12">
                                                             <div class="fp__comment_imput_single">
                                                                 <label>name</label>
-                                                                <input type="text" placeholder="Name">
+                                                                <input type="text"
+                                                                       placeholder="Name">
                                                             </div>
                                                         </div>
                                                         <div class="col-xl-6 col-lg-6">
                                                             <div class="fp__comment_imput_single">
                                                                 <label>email</label>
-                                                                <input type="email" placeholder="Email">
+                                                                <input type="email"
+                                                                       placeholder="Email">
                                                             </div>
                                                         </div>
                                                         <div class="col-xl-6 col-lg-6">
                                                             <div class="fp__comment_imput_single">
                                                                 <label>phone</label>
-                                                                <input type="text" placeholder="Phone">
+                                                                <input type="text"
+                                                                       placeholder="Phone">
                                                             </div>
                                                         </div>
                                                         <div class="col-xl-12">
                                                             <div class="fp__comment_imput_single">
                                                                 <label>address</label>
-                                                                <textarea rows="4" placeholder="Address"></textarea>
+                                                                <textarea rows="4"
+                                                                          placeholder="Address"></textarea>
                                                             </div>
-                                                            <button type="submit" class="common_btn">submit</button>
+                                                            <button type="submit"
+                                                                    class="common_btn">submit
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -159,7 +215,9 @@
                                     </div>
                                 </div>
 
-                                <div class="tab-pane fade" id="v-pills-address" role="tabpanel"
+                                <div class="tab-pane fade"
+                                     id="v-pills-address"
+                                     role="tabpanel"
                                      aria-labelledby="v-pills-address-tab">
                                     <div class="fp_dashboard_body address_body">
                                         <h3>address <a class="dash_add_new_address"><i class="far fa-plus"></i> add new
@@ -261,12 +319,14 @@
                                                         </div>
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="fp__check_single_form">
-                                                                <input type="text" placeholder="First Name">
+                                                                <input type="text"
+                                                                       placeholder="First Name">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="fp__check_single_form">
-                                                                <input type="text" placeholder="Last Name">
+                                                                <input type="text"
+                                                                       placeholder="Last Name">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12 col-lg-12 col-xl-12">
@@ -290,7 +350,8 @@
 
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="fp__check_single_form">
-                                                                <input type="text" placeholder="Street Address *">
+                                                                <input type="text"
+                                                                       placeholder="Street Address *">
                                                             </div>
                                                         </div>
 
@@ -302,48 +363,58 @@
                                                         </div>
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="fp__check_single_form">
-                                                                <input type="text" placeholder="Town / City *">
+                                                                <input type="text"
+                                                                       placeholder="Town / City *">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="fp__check_single_form">
-                                                                <input type="text" placeholder="State *">
+                                                                <input type="text"
+                                                                       placeholder="State *">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="fp__check_single_form">
-                                                                <input type="text" placeholder="Zip *">
+                                                                <input type="text"
+                                                                       placeholder="Zip *">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="fp__check_single_form">
-                                                                <input type="text" placeholder="Phone *">
+                                                                <input type="text"
+                                                                       placeholder="Phone *">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="fp__check_single_form">
-                                                                <input type="email" placeholder="Email *">
+                                                                <input type="email"
+                                                                       placeholder="Email *">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12 col-lg-12 col-xl-12">
                                                             <div class="fp__check_single_form">
-                                                                <textarea cols="3" rows="4"
+                                                                <textarea cols="3"
+                                                                          rows="4"
                                                                           placeholder="Address"></textarea>
                                                             </div>
                                                         </div>
                                                         <div class="col-12">
                                                             <div class="fp__check_single_form check_area">
                                                                 <div class="form-check">
-                                                                    <input class="form-check-input" type="radio"
-                                                                           name="flexRadioDefault" id="flexRadioDefault1">
+                                                                    <input class="form-check-input"
+                                                                           type="radio"
+                                                                           name="flexRadioDefault"
+                                                                           id="flexRadioDefault1">
                                                                     <label class="form-check-label"
                                                                            for="flexRadioDefault1">
                                                                         home
                                                                     </label>
                                                                 </div>
                                                                 <div class="form-check">
-                                                                    <input class="form-check-input" type="radio"
-                                                                           name="flexRadioDefault" id="flexRadioDefault2">
+                                                                    <input class="form-check-input"
+                                                                           type="radio"
+                                                                           name="flexRadioDefault"
+                                                                           id="flexRadioDefault2">
                                                                     <label class="form-check-label"
                                                                            for="flexRadioDefault2">
                                                                         office
@@ -353,9 +424,12 @@
                                                         </div>
                                                         <div class="col-12">
                                                             <button type="button"
-                                                                    class="common_btn cancel_new_address">cancel</button>
-                                                            <button type="submit" class="common_btn">save
-                                                                address</button>
+                                                                    class="common_btn cancel_new_address">cancel
+                                                            </button>
+                                                            <button type="submit"
+                                                                    class="common_btn">save
+                                                                address
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -369,13 +443,15 @@
 
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="fp__check_single_form">
-                                                                <input type="text" placeholder="First Name">
+                                                                <input type="text"
+                                                                       placeholder="First Name">
                                                             </div>
                                                         </div>
 
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="fp__check_single_form">
-                                                                <input type="text" placeholder="Last Name">
+                                                                <input type="text"
+                                                                       placeholder="Last Name">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12 col-lg-12 col-xl-12">
@@ -398,7 +474,8 @@
                                                         </div>
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="fp__check_single_form">
-                                                                <input type="text" placeholder="Street Address *">
+                                                                <input type="text"
+                                                                       placeholder="Street Address *">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
@@ -409,39 +486,46 @@
                                                         </div>
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="fp__check_single_form">
-                                                                <input type="text" placeholder="Town / City *">
+                                                                <input type="text"
+                                                                       placeholder="Town / City *">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="fp__check_single_form">
-                                                                <input type="text" placeholder="State *">
+                                                                <input type="text"
+                                                                       placeholder="State *">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="fp__check_single_form">
-                                                                <input type="text" placeholder="Zip *">
+                                                                <input type="text"
+                                                                       placeholder="Zip *">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="fp__check_single_form">
-                                                                <input type="text" placeholder="Phone *">
+                                                                <input type="text"
+                                                                       placeholder="Phone *">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6 col-lg-12 col-xl-6">
                                                             <div class="fp__check_single_form">
-                                                                <input type="email" placeholder="Email *">
+                                                                <input type="email"
+                                                                       placeholder="Email *">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12 col-lg-12 col-xl-12">
                                                             <div class="fp__check_single_form">
-                                                                <textarea cols="3" rows="4"
+                                                                <textarea cols="3"
+                                                                          rows="4"
                                                                           placeholder="Address"></textarea>
                                                             </div>
                                                         </div>
                                                         <div class="col-12">
                                                             <div class="fp__check_single_form check_area">
                                                                 <div class="form-check">
-                                                                    <input class="form-check-input" type="radio"
+                                                                    <input class="form-check-input"
+                                                                           type="radio"
                                                                            name="flexRadioDefault2"
                                                                            id="flexRadioDefault12">
                                                                     <label class="form-check-label"
@@ -450,7 +534,8 @@
                                                                     </label>
                                                                 </div>
                                                                 <div class="form-check">
-                                                                    <input class="form-check-input" type="radio"
+                                                                    <input class="form-check-input"
+                                                                           type="radio"
                                                                            name="flexRadioDefault2"
                                                                            id="flexRadioDefault22">
                                                                     <label class="form-check-label"
@@ -462,10 +547,13 @@
                                                         </div>
                                                         <div class="col-12">
                                                             <button type="button"
-                                                                    class="common_btn cancel_edit_address">cancel</button>
+                                                                    class="common_btn cancel_edit_address">cancel
+                                                            </button>
 
-                                                            <button type="submit" class="common_btn">update
-                                                                address</button>
+                                                            <button type="submit"
+                                                                    class="common_btn">update
+                                                                address
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -474,7 +562,9 @@
                                     </div>
                                 </div>
 
-                                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                                <div class="tab-pane fade"
+                                     id="v-pills-profile"
+                                     role="tabpanel"
                                      aria-labelledby="v-pills-profile-tab">
                                     <div class="fp_dashboard_body">
                                         <h3>order list</h3>
@@ -788,7 +878,8 @@
                                                         </tbody>
                                                         <tfoot>
                                                         <tr>
-                                                            <td class="package" colspan="3">
+                                                            <td class="package"
+                                                                colspan="3">
                                                                 <b>sub total</b>
                                                             </td>
                                                             <td class="qnty">
@@ -799,7 +890,8 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="package coupon" colspan="3">
+                                                            <td class="package coupon"
+                                                                colspan="3">
                                                                 <b>(-) Discount coupon</b>
                                                             </td>
                                                             <td class="qnty">
@@ -810,7 +902,8 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="package coast" colspan="3">
+                                                            <td class="package coast"
+                                                                colspan="3">
                                                                 <b>(+) Shipping Cost</b>
                                                             </td>
                                                             <td class="qnty">
@@ -821,7 +914,8 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="package" colspan="3">
+                                                            <td class="package"
+                                                                colspan="3">
                                                                 <b>Total Paid</b>
                                                             </td>
                                                             <td class="qnty">
@@ -835,14 +929,17 @@
                                                     </table>
                                                 </div>
                                             </div>
-                                            <a class="print_btn common_btn" href="#"><i class="far fa-print"></i> print
+                                            <a class="print_btn common_btn"
+                                               href="#"><i class="far fa-print"></i> print
                                                 PDF</a>
 
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="tab-pane fade " id="v-pills-messages2" role="tabpanel"
+                                <div class="tab-pane fade "
+                                     id="v-pills-messages2"
+                                     role="tabpanel"
                                      aria-labelledby="v-pills-messages-tab2">
                                     <div class="fp_dashboard_body">
                                         <h3>wishlist</h3>
@@ -852,9 +949,11 @@
                                                 <div class="col-xl-4 col-sm-6 col-lg-6">
                                                     <div class="fp__menu_item">
                                                         <div class="fp__menu_item_img">
-                                                            <img src="images/menu2_img_1.jpg" alt="menu"
+                                                            <img src="images/menu2_img_1.jpg"
+                                                                 alt="menu"
                                                                  class="img-fluid w-100">
-                                                            <a class="category" href="#">Biryani</a>
+                                                            <a class="category"
+                                                               href="#">Biryani</a>
                                                         </div>
                                                         <div class="fp__menu_item_text">
                                                             <p class="rating">
@@ -865,11 +964,13 @@
                                                                 <i class="far fa-star"></i>
                                                                 <span>10</span>
                                                             </p>
-                                                            <a class="title" href="menu_details.html">Hyderabadi
+                                                            <a class="title"
+                                                               href="menu_details.html">Hyderabadi
                                                                 biryani</a>
                                                             <h5 class="price">$70.00</h5>
                                                             <ul class="d-flex flex-wrap justify-content-center">
-                                                                <li><a href="#" data-bs-toggle="modal"
+                                                                <li><a href="#"
+                                                                       data-bs-toggle="modal"
                                                                        data-bs-target="#cartModal"><i
                                                                             class="fas fa-shopping-basket"></i></a></li>
                                                                 <li><a href="#"><i class="fal fa-heart"></i></a></li>
@@ -881,9 +982,11 @@
                                                 <div class="col-xl-4 col-sm-6 col-lg-6">
                                                     <div class="fp__menu_item">
                                                         <div class="fp__menu_item_img">
-                                                            <img src="images/menu2_img_2.jpg" alt="menu"
+                                                            <img src="images/menu2_img_2.jpg"
+                                                                 alt="menu"
                                                                  class="img-fluid w-100">
-                                                            <a class="category" href="#">chicken</a>
+                                                            <a class="category"
+                                                               href="#">chicken</a>
                                                         </div>
                                                         <div class="fp__menu_item_text">
                                                             <p class="rating">
@@ -894,10 +997,14 @@
                                                                 <i class="far fa-star"></i>
                                                                 <span>145</span>
                                                             </p>
-                                                            <a class="title" href="menu_details.html">chicken Masala</a>
-                                                            <h5 class="price">$80.00 <del>90.00</del></h5>
+                                                            <a class="title"
+                                                               href="menu_details.html">chicken Masala</a>
+                                                            <h5 class="price">$80.00
+                                                                <del>90.00</del>
+                                                            </h5>
                                                             <ul class="d-flex flex-wrap justify-content-center">
-                                                                <li><a href="#" data-bs-toggle="modal"
+                                                                <li><a href="#"
+                                                                       data-bs-toggle="modal"
                                                                        data-bs-target="#cartModal"><i
                                                                             class="fas fa-shopping-basket"></i></a></li>
                                                                 <li><a href="#"><i class="fal fa-heart"></i></a></li>
@@ -909,9 +1016,11 @@
                                                 <div class="col-xl-4 col-sm-6 col-lg-6">
                                                     <div class="fp__menu_item">
                                                         <div class="fp__menu_item_img">
-                                                            <img src="images/menu2_img_3.jpg" alt="menu"
+                                                            <img src="images/menu2_img_3.jpg"
+                                                                 alt="menu"
                                                                  class="img-fluid w-100">
-                                                            <a class="category" href="#">grill</a>
+                                                            <a class="category"
+                                                               href="#">grill</a>
                                                         </div>
                                                         <div class="fp__menu_item_text">
                                                             <p class="rating">
@@ -922,11 +1031,13 @@
                                                                 <i class="far fa-star"></i>
                                                                 <span>54</span>
                                                             </p>
-                                                            <a class="title" href="menu_details.html">daria
+                                                            <a class="title"
+                                                               href="menu_details.html">daria
                                                                 shevtsova</a>
                                                             <h5 class="price">$99.00</h5>
                                                             <ul class="d-flex flex-wrap justify-content-center">
-                                                                <li><a href="#" data-bs-toggle="modal"
+                                                                <li><a href="#"
+                                                                       data-bs-toggle="modal"
                                                                        data-bs-target="#cartModal"><i
                                                                             class="fas fa-shopping-basket"></i></a></li>
                                                                 <li><a href="#"><i class="fal fa-heart"></i></a></li>
@@ -938,9 +1049,11 @@
                                                 <div class="col-xl-4 col-sm-6 col-lg-6">
                                                     <div class="fp__menu_item">
                                                         <div class="fp__menu_item_img">
-                                                            <img src="images/menu2_img_4.jpg" alt="menu"
+                                                            <img src="images/menu2_img_4.jpg"
+                                                                 alt="menu"
                                                                  class="img-fluid w-100">
-                                                            <a class="category" href="#">chicken</a>
+                                                            <a class="category"
+                                                               href="#">chicken</a>
                                                         </div>
                                                         <div class="fp__menu_item_text">
                                                             <p class="rating">
@@ -951,10 +1064,14 @@
                                                                 <i class="far fa-star"></i>
                                                                 <span>74</span>
                                                             </p>
-                                                            <a class="title" href="menu_details.html">chicken Masala</a>
-                                                            <h5 class="price">$80.00 <del>90.00</del></h5>
+                                                            <a class="title"
+                                                               href="menu_details.html">chicken Masala</a>
+                                                            <h5 class="price">$80.00
+                                                                <del>90.00</del>
+                                                            </h5>
                                                             <ul class="d-flex flex-wrap justify-content-center">
-                                                                <li><a href="#" data-bs-toggle="modal"
+                                                                <li><a href="#"
+                                                                       data-bs-toggle="modal"
                                                                        data-bs-target="#cartModal"><i
                                                                             class="fas fa-shopping-basket"></i></a></li>
                                                                 <li><a href="#"><i class="fal fa-heart"></i></a></li>
@@ -966,9 +1083,11 @@
                                                 <div class="col-xl-4 col-sm-6 col-lg-6">
                                                     <div class="fp__menu_item">
                                                         <div class="fp__menu_item_img">
-                                                            <img src="images/menu2_img_5.jpg" alt="menu"
+                                                            <img src="images/menu2_img_5.jpg"
+                                                                 alt="menu"
                                                                  class="img-fluid w-100">
-                                                            <a class="category" href="#">chicken</a>
+                                                            <a class="category"
+                                                               href="#">chicken</a>
                                                         </div>
                                                         <div class="fp__menu_item_text">
                                                             <p class="rating">
@@ -979,10 +1098,14 @@
                                                                 <i class="far fa-star"></i>
                                                                 <span>120</span>
                                                             </p>
-                                                            <a class="title" href="menu_details.html">chicken Masala</a>
-                                                            <h5 class="price">$80.00 <del>90.00</del></h5>
+                                                            <a class="title"
+                                                               href="menu_details.html">chicken Masala</a>
+                                                            <h5 class="price">$80.00
+                                                                <del>90.00</del>
+                                                            </h5>
                                                             <ul class="d-flex flex-wrap justify-content-center">
-                                                                <li><a href="#" data-bs-toggle="modal"
+                                                                <li><a href="#"
+                                                                       data-bs-toggle="modal"
                                                                        data-bs-target="#cartModal"><i
                                                                             class="fas fa-shopping-basket"></i></a></li>
                                                                 <li><a href="#"><i class="fal fa-heart"></i></a></li>
@@ -994,9 +1117,11 @@
                                                 <div class="col-xl-4 col-sm-6 col-lg-6">
                                                     <div class="fp__menu_item">
                                                         <div class="fp__menu_item_img">
-                                                            <img src="images/menu2_img_6.jpg" alt="menu"
+                                                            <img src="images/menu2_img_6.jpg"
+                                                                 alt="menu"
                                                                  class="img-fluid w-100">
-                                                            <a class="category" href="#">Biryani</a>
+                                                            <a class="category"
+                                                               href="#">Biryani</a>
                                                         </div>
                                                         <div class="fp__menu_item_text">
                                                             <p class="rating">
@@ -1007,11 +1132,13 @@
                                                                 <i class="far fa-star"></i>
                                                                 <span>514</span>
                                                             </p>
-                                                            <a class="title" href="menu_details.html">Hyderabadi
+                                                            <a class="title"
+                                                               href="menu_details.html">Hyderabadi
                                                                 biryani</a>
                                                             <h5 class="price">$70.00</h5>
                                                             <ul class="d-flex flex-wrap justify-content-center">
-                                                                <li><a href="#" data-bs-toggle="modal"
+                                                                <li><a href="#"
+                                                                       data-bs-toggle="modal"
                                                                        data-bs-target="#cartModal"><i
                                                                             class="fas fa-shopping-basket"></i></a></li>
                                                                 <li><a href="#"><i class="fal fa-heart"></i></a></li>
@@ -1028,7 +1155,8 @@
                                                         <nav aria-label="...">
                                                             <ul class="pagination justify-content-start">
                                                                 <li class="page-item">
-                                                                    <a class="page-link" href="#"><i
+                                                                    <a class="page-link"
+                                                                       href="#"><i
                                                                             class="fas fa-long-arrow-alt-left"></i></a>
                                                                 </li>
                                                                 <li class="page-item"><a class="page-link"
@@ -1038,7 +1166,8 @@
                                                                 <li class="page-item"><a class="page-link"
                                                                                          href="#">3</a></li>
                                                                 <li class="page-item">
-                                                                    <a class="page-link" href="#"><i
+                                                                    <a class="page-link"
+                                                                       href="#"><i
                                                                             class="fas fa-long-arrow-alt-right"></i></a>
                                                                 </li>
                                                             </ul>
@@ -1051,14 +1180,18 @@
                                     </div>
                                 </div>
 
-                                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                                <div class="tab-pane fade"
+                                     id="v-pills-messages"
+                                     role="tabpanel"
                                      aria-labelledby="v-pills-messages-tab">
                                     <div class="fp_dashboard_body dashboard_review">
                                         <h3>review</h3>
                                         <div class="fp__review_area">
                                             <div class="fp__comment pt-0 mt_20">
                                                 <div class="fp__single_comment m-0 border-0">
-                                                    <img src="images/menu1.png" alt="review" class="img-fluid">
+                                                    <img src="images/menu1.png"
+                                                         alt="review"
+                                                         class="img-fluid">
                                                     <div class="fp__single_comm_text">
                                                         <h3><a href="#">mamun ahmed shuvo</a> <span>29 oct 2022 </span>
                                                         </h3>
@@ -1077,7 +1210,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="fp__single_comment">
-                                                    <img src="images/menu2.png" alt=" review" class="img-fluid">
+                                                    <img src="images/menu2.png"
+                                                         alt=" review"
+                                                         class="img-fluid">
                                                     <div class="fp__single_comm_text">
                                                         <h3><a href="#">asaduzzaman khan</a> <span>29 oct 2022 </span>
                                                         </h3>
@@ -1096,7 +1231,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="fp__single_comment">
-                                                    <img src="images/menu3.png" alt="review" class="img-fluid">
+                                                    <img src="images/menu3.png"
+                                                         alt="review"
+                                                         class="img-fluid">
                                                     <div class="fp__single_comm_text">
                                                         <h3><a href="#">ariful islam rupom</a> <span>29 oct 2022 </span>
                                                         </h3>
@@ -1115,7 +1252,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="fp__single_comment">
-                                                    <img src="images/menu4.png" alt="review" class="img-fluid">
+                                                    <img src="images/menu4.png"
+                                                         alt="review"
+                                                         class="img-fluid">
                                                     <div class="fp__single_comm_text">
                                                         <h3><a href="#">ali ahmed jakir</a> <span>29 oct 2022 </span>
                                                         </h3>
@@ -1133,13 +1272,16 @@
                                                         <span class="status inactive">inactive</span>
                                                     </div>
                                                 </div>
-                                                <a href="#" class="load_more">load More</a>
+                                                <a href="#"
+                                                   class="load_more">load More</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                                <div class="tab-pane fade"
+                                     id="v-pills-settings"
+                                     role="tabpanel"
                                      aria-labelledby="v-pills-settings-tab">
                                     <div class="fp_dashboard_body fp__change_password">
                                         <div class="fp__review_input">
@@ -1150,22 +1292,26 @@
                                                         <div class="col-xl-6">
                                                             <div class="fp__comment_imput_single">
                                                                 <label>Current Password</label>
-                                                                <input type="password" placeholder="Current Password">
+                                                                <input type="password"
+                                                                       placeholder="Current Password">
                                                             </div>
                                                         </div>
                                                         <div class="col-xl-6">
                                                             <div class="fp__comment_imput_single">
                                                                 <label>New Password</label>
-                                                                <input type="password" placeholder="New Password">
+                                                                <input type="password"
+                                                                       placeholder="New Password">
                                                             </div>
                                                         </div>
                                                         <div class="col-xl-12">
                                                             <div class="fp__comment_imput_single">
                                                                 <label>confirm Password</label>
-                                                                <input type="password" placeholder="Confirm Password">
+                                                                <input type="password"
+                                                                       placeholder="Confirm Password">
                                                             </div>
                                                             <button type="submit"
-                                                                    class="common_btn mt_20">submit</button>
+                                                                    class="common_btn mt_20">submit
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -1184,17 +1330,26 @@
 
     <!-- CART POPUT START -->
     <div class="fp__cart_popup">
-        <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+        <div class="modal fade"
+             id="cartModal"
+             tabindex="-1"
+             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
+                        <button type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"><i
                                 class="fal fa-times"></i></button>
                         <div class="fp__cart_popup_img">
-                            <img src="images/menu1.png" alt="menu" class="img-fluid w-100">
+                            <img src="images/menu1.png"
+                                 alt="menu"
+                                 class="img-fluid w-100">
                         </div>
                         <div class="fp__cart_popup_text">
-                            <a href="#" class="title">Maxican Pizza Test Better</a>
+                            <a href="#"
+                               class="title">Maxican Pizza Test Better</a>
                             <p class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -1203,26 +1358,40 @@
                                 <i class="far fa-star"></i>
                                 <span>(201)</span>
                             </p>
-                            <h4 class="price">$320.00 <del>$350.00</del> </h4>
+                            <h4 class="price">$320.00
+                                <del>$350.00</del>
+                            </h4>
 
                             <div class="details_size">
                                 <h5>select size</h5>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="large"
+                                    <input class="form-check-input"
+                                           type="radio"
+                                           name="flexRadioDefault"
+                                           id="large"
                                            checked>
-                                    <label class="form-check-label" for="large">
+                                    <label class="form-check-label"
+                                           for="large">
                                         large <span>+ $350</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="medium">
-                                    <label class="form-check-label" for="medium">
+                                    <input class="form-check-input"
+                                           type="radio"
+                                           name="flexRadioDefault"
+                                           id="medium">
+                                    <label class="form-check-label"
+                                           for="medium">
                                         medium <span>+ $250</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="small">
-                                    <label class="form-check-label" for="small">
+                                    <input class="form-check-input"
+                                           type="radio"
+                                           name="flexRadioDefault"
+                                           id="small">
+                                    <label class="form-check-label"
+                                           for="small">
                                         small <span>+ $150</span>
                                     </label>
                                 </div>
@@ -1231,14 +1400,22 @@
                             <div class="details_extra_item">
                                 <h5>select option <span>(optional)</span></h5>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="coca-cola">
-                                    <label class="form-check-label" for="coca-cola">
+                                    <input class="form-check-input"
+                                           type="checkbox"
+                                           value=""
+                                           id="coca-cola">
+                                    <label class="form-check-label"
+                                           for="coca-cola">
                                         coca-cola <span>+ $10</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="7up">
-                                    <label class="form-check-label" for="7up">
+                                    <input class="form-check-input"
+                                           type="checkbox"
+                                           value=""
+                                           id="7up">
+                                    <label class="form-check-label"
+                                           for="7up">
                                         7up <span>+ $15</span>
                                     </label>
                                 </div>
@@ -1249,14 +1426,16 @@
                                 <div class="quentity_btn_area d-flex flex-wrapa align-items-center">
                                     <div class="quentity_btn">
                                         <button class="btn btn-danger"><i class="fal fa-minus"></i></button>
-                                        <input type="text" placeholder="1">
+                                        <input type="text"
+                                               placeholder="1">
                                         <button class="btn btn-success"><i class="fal fa-plus"></i></button>
                                     </div>
                                     <h3>$320.00</h3>
                                 </div>
                             </div>
                             <ul class="details_button_area d-flex flex-wrap">
-                                <li><a class="common_btn" href="#">add to cart</a></li>
+                                <li><a class="common_btn"
+                                       href="#">add to cart</a></li>
                             </ul>
                         </div>
                     </div>

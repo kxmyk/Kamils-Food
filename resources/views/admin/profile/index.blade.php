@@ -82,13 +82,13 @@
 
 @push('scripts')
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('.image-preview').css({
                 'background-image': 'url({{ asset(auth()->user()->avatar) }})',
                 'background-size': 'cover',
                 'backgrund-position': 'center center',
-            })
-        })
+            });
+        });
     </script>
 @endpush
 
