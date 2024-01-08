@@ -1,5 +1,5 @@
 <section class="fp__counter"
-         style="background: url(images/counter_bg2.jpg);">
+         style="background: url({{ ('frontend/images/counter_bg.jpg') }});">
     <div class="fp__counter_overlay pt_100 xs_pt_70 pb_100 xs_pb_70">
         <div class="container">
             <div class="row">

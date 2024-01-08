@@ -24,6 +24,7 @@ Route::get('admin/forget-password', [AdminAuthController::class, 'forgetPassword
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::put('/profile', [\App\Http\Controllers\Frontend\ProfileController::class, 'updateProfile'])->name('profile.update');
+    Route::put('/profile/password', [\App\Http\Controllers\Frontend\ProfileController::class, 'updatePassword'])->name('profile.password.update');
 });
 
 
