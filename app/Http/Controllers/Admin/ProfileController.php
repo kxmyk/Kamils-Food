@@ -30,7 +30,7 @@ class ProfileController extends Controller
         $user->save();
 
         toastr('Updated Successfully!', 'success');
-
+        
         return redirect()->back();
     }
 

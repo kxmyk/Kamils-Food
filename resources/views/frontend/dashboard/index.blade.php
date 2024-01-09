@@ -36,13 +36,16 @@
                         <div class="fp__dashboard_menu">
                             <div class="dasboard_header">
                                 <div class="dasboard_header_img">
-                                    <img src="images/comment_img_2.png"
+                                    <img src="{{ auth()->user()->avatar }}"
                                          alt="user"
                                          class="img-fluid w-100">
                                     <label for="upload"><i class="far fa-camera"></i></label>
-                                    <input type="file"
-                                           id="upload"
-                                           hidden>
+                                    <form id='avatar_form'>
+                                        <input type="file"
+                                               id="upload"
+                                               name='avatar'
+                                               hidden>
+                                    </form>
                                 </div>
                                 <h2>{{ auth()->user()->name }}</h2>
                             </div>
@@ -1403,3 +1406,31 @@
         DASHBOARD END
     ==========================-->
 @endsection
+
+@push('scripts')
+    <script>
+        $(document).ready(function () {
+            $('#upload').on('change', function () {
+                let form = $('#avatar_form')[0];
+                let formData = new FormData(form);
+
+                $.ajax({
+                    method: 'POST',
+                    url: "{{ route('profile.avatar.update') }}",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+
+                    success: function (response) {
+                        if (response.status === 'success') {
+                            window.location.reload();
+                            
+                        }
+                    },
+                    error: function (error) {
+                    }
+                });
+            });
+        });
+    </script>
+@endpush

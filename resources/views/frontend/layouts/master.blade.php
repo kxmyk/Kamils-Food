@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densityDpi=device-dpi"/>
+    <meta name="csrf-token"
+          content="{{ csrf_token() }}"/>
     <title>KamilsFood || Restaurant Template</title>
     <link rel="icon"
           type="image/png"
@@ -130,12 +132,21 @@
 
 <script>
     toastr.options.progressBar = true;
+
     @if ($errors->any())
     @foreach($errors->all() as $error)
     toastr.error("{{$error}}");
     @endforeach
     @endif
+
+    // csrf ajax
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
 </script>
+@stack('scripts')
 
 </body>
 
