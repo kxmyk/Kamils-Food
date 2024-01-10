@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -13,6 +12,13 @@ return new class extends Migration
     {
         Schema::create('sliders', function (Blueprint $table) {
             $table->id();
+            $table->text('image');
+            $table->string('offer');
+            $table->string('title');
+            $table->string('sub_title');
+            $table->string('short_description');
+            $table->string('button_link');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
