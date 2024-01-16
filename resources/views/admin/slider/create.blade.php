@@ -9,7 +9,9 @@
                 <h4>Create slider</h4>
             </div>
             <div class='card-body'>
-                <form action=''>
+                <form action='{{ route('admin.slider.store') }}'
+                      method='post'
+                      entype='multipart/form-data'>
                     @csrf
                     <div class='form-group'>
                         <label>Image</label>
