@@ -24,7 +24,8 @@
                                        id="image-label">Choose File</label>
                                 <input type="file"
                                        name="avatar"
-                                       id="image-upload"/>
+                                       id="image-upload"
+                                       enctype="multipart/form-data"/>
                             </div>
                         </div>
                         <div class="form-group">
