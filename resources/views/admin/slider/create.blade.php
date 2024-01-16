@@ -11,7 +11,7 @@
             <div class='card-body'>
                 <form action='{{ route('admin.slider.store') }}'
                       method='post'
-                      entype='multipart/form-data'>
+                      enctype="multipart/form-data">
                     @csrf
                     <div class='form-group'>
                         <label>Image</label>
@@ -44,9 +44,7 @@
                     </div>
                     <div class='form-group'>
                         <label>Short Description</label>
-                        <textarea name=''
-                                  id=''
-                                  cols='30'
+                        <textarea cols='30'
                                   rows='10'
                                   class='form-control'
                                   name='short_description'></textarea>
@@ -60,7 +58,6 @@
                     <div class='form-group'>
                         <label>Status</label>
                         <select class='form-control'
-                                id=''
                                 name='status'>
                             <option value='1'>Yes</option>
                             <option value='0'>No</option>
