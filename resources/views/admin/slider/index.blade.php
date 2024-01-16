@@ -8,7 +8,7 @@
             <div class='card-header'>
                 <h4>Card Header</h4>
                 <div class='card-header-action'>
-                    <a href='#'
+                    <a href='{{ route('admin.slider.create') }}'
                        class='btn btn-primary'>
                         Create new
                     </a>
