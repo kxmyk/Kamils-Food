@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 
 trait FileUploadTrait
 {
+
+
     function uploadImage(Request $request, $inputName, $path = "/uploads")
     {
 
         if ($request->hasFile($inputName)) {
-            $image = $request->file('avatar');
+            $image = $request->{$inputName};
             $ext = $image->getClientOriginalExtension();
             $imageName = 'media_' . uniqid() . '.' . $ext;
 

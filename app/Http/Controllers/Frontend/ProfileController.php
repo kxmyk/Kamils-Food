@@ -6,10 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\ProfilePasswordUpdateRequest;
 use App\Http\Requests\Frontend\ProfileUpdateRequest;
 use App\Traits\FileUploadTrait;
+use Auth;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -22,7 +21,7 @@ class ProfileController extends Controller
         $user->email = $request->email;
         $user->save();
 
-        toastr()->success('Profile updated successfully');
+        toastr()->success('Profile Updated Successfully');
 
         return redirect()->back();
     }
@@ -37,13 +36,14 @@ class ProfileController extends Controller
         return redirect()->back();
     }
 
-    function updateAvatar(Request $request): Response
+    function updateAvatar(Request $request)
     {
+        /** handle image file */
+        $imagePath = $this->uploadImage($request, 'avatar');
+
         $user = Auth::user();
-        $imagePath = $this->uploadImage($request, 'avatar',);
-        $user->avatar = isset($imagePath) ? $imagePath : $user->avatar;
+        $user->avatar = $imagePath;
         $user->save();
-        toastr()->success('Avatar Updated Successfully');
 
         return response(['status' => 'success', 'message' => 'Avatar Updated Successfully']);
     }

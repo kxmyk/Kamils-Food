@@ -7,9 +7,8 @@ use Illuminate\Contracts\View\View;
 
 class AdminDashboardController extends Controller
 {
-    public function index(): View
+    function index(): View
     {
-//        return view('admin.dashboard.index');
         return view('admin.dashboard.index');
     }
 }

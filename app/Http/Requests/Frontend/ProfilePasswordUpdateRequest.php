@@ -3,7 +3,6 @@
 namespace App\Http\Requests\Frontend;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rules\Password;
 
 class ProfilePasswordUpdateRequest extends FormRequest
 {
@@ -18,20 +17,20 @@ class ProfilePasswordUpdateRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
      */
     public function rules(): array
     {
         return [
             'current_password' => ['required', 'current_password'],
-            'password' => ['required', 'min:5', 'confirmed'],
+            'password' => ['required', 'min:5', 'confirmed']
         ];
     }
 
     function messages(): array
     {
         return [
-            'current_password.current_password' => 'Current Password is invalid'
+            'current_password.current_password' => 'Current Password is invalid!'
         ];
     }
 }

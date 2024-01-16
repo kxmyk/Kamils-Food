@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\DataTables\SliderDataTable;
 use App\Http\Controllers\Controller;
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class SliderController extends Controller
@@ -11,9 +11,9 @@ class SliderController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index(SliderDataTable $dataTable)
     {
-        return view('admin.slider.index');
+        return $dataTable->render('admin.slider.index');
     }
 
     /**
