@@ -24,7 +24,7 @@ class ProfileController extends Controller
 
         $user = Auth::user();
 
-        $imagePath = $this->uploadImage($request, 'avatar');
+        $imagePath = $this->uploadImage($request, 'avatar', $user->avatar);
 
         $user->name = $request->name;
         $user->email = $request->email;

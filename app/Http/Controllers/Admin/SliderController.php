@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\DataTables\SliderDataTable;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\SliderCreateRequest;
+use App\Http\Requests\Admin\SliderUpdateRequest;
 use App\Models\Slider;
 use App\Traits\FileUploadTrait;
 use Illuminate\Contracts\View\View;
@@ -36,8 +37,6 @@ class SliderController extends Controller
      */
     public function store(SliderCreateRequest $request): RedirectResponse
     {
-        // Handle image upload
-
         $imagePath = $this->uploadImage($request, 'image');
         $slider = new Slider();
         $slider->image = $imagePath;
@@ -50,7 +49,7 @@ class SliderController extends Controller
 
         $slider->save();
 
-        toastr()->success('Slider Created Succesfully');
+        toastr()->success('Slider Created Successfully');
 
         return redirect()->back();
     }
@@ -66,17 +65,35 @@ class SliderController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id): View
     {
-        //
+        $slider = Slider::findOrFail($id);
+        return view('admin.slider.edit', compact('slider'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(SliderUpdateRequest $request, string $id)
     {
-        //
+        $slider = Slider::findOrFail($id);
+        $slider->offer = $request->offer;
+        $slider->title = $request->title;
+        $slider->sub_title = $request->sub_title;
+        $slider->short_description = $request->short_description;
+        $slider->button_link = $request->offer;
+        $slider->status = $request->status;
+
+        if (isset($request->image)) {
+            $imagePath = $this->uploadImage($request, $slider->image, 'image');
+            $slider->image = $imagePath;
+        }
+
+        $slider->save();
+
+        toastr()->success('Slider Updated Successfully');
+
+        return redirect(route('admin.slider.index'));
     }
 
     /**

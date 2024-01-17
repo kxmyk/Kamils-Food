@@ -32,3 +32,4 @@ yarn-error.log
 /app/Http/Controllers/Auth/ResetPasswordController.php
 /app/Http/Controllers/Auth/VerificationController.php
 /resources/views/auth/verify.blade.php
+/public/uploads
