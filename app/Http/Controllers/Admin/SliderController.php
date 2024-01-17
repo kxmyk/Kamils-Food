@@ -84,7 +84,7 @@ class SliderController extends Controller
         $slider->status = $request->status;
 
         if (isset($request->image)) {
-            $imagePath = $this->uploadImage($request, $slider->image, 'image');
+            $imagePath = $this->uploadImage($request, 'image', $slider->image);
             $slider->image = $imagePath;
         }
 
@@ -92,7 +92,7 @@ class SliderController extends Controller
 
         toastr()->success('Slider Updated Successfully');
 
-        return redirect(route('admin.slider.index'));
+        return to_route('admin.slider.index');
     }
 
     /**
