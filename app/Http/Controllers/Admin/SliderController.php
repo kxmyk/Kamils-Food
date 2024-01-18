@@ -100,10 +100,10 @@ class SliderController extends Controller
      */
     public function destroy(string $id)
     {
-        $slider = Slider::findOrFail($id);
-        $slider->delete();
-
         try {
+            $slider = Slider::findOrFail($id);
+            $this->removeImage($slider->image);
+            $slider->delete();
             return response([
                 'status' => 'success',
                 'message' => 'Deleted Successfully',

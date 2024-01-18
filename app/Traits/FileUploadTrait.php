@@ -2,15 +2,12 @@
 
 namespace App\Traits;
 
-use Illuminate\Filesystem\Filesystem;
-use Illuminate\Http\FileHelpers;
-use Illuminate\Http\Request;
 use File;
+use Illuminate\Filesystem\Filesystem;
+use Illuminate\Http\Request;
 
 trait FileUploadTrait
 {
-
-
     function uploadImage(Request $request, $inputName, $oldPath = null, $path = "/uploads")
     {
         $fileSystem = new Filesystem();
@@ -32,4 +29,12 @@ trait FileUploadTrait
         return NULL;
     }
 
+    function removeImage(string $path): void
+    {
+        $fileSystem = new Filesystem();
+
+        if ($fileSystem->exists(public_path($path))) {
+            $fileSystem->delete(public_path($path));
+        }
+    }
 }
