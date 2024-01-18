@@ -50,7 +50,7 @@ class SliderController extends Controller
 
         toastr()->success('Slider Created Successfully');
 
-        return redirect()->back();
+        return to_route('admin.slider.index');
     }
 
     /**
@@ -80,7 +80,7 @@ class SliderController extends Controller
         $slider->title = $request->title;
         $slider->sub_title = $request->sub_title;
         $slider->short_description = $request->short_description;
-        $slider->button_link = $request->offer;
+        $slider->button_link = $request->button_link;
         $slider->status = $request->status;
 
         if (isset($request->image)) {

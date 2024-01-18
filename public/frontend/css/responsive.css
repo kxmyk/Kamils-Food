@@ -19,15 +19,12 @@
     }
 
     /* ======HOME PAGE END====== */
-
-
     /* ======ABOUT PAGE START====== */
     .fp__scroll_btn {
         right: -25px;
     }
 
     /* ======ABOUT PAGE END====== */
-
     .fp__single_comm_text {
         width: 83%;
     }
@@ -178,8 +175,6 @@
     }
 
     /* ======HOME PAGE END====== */
-
-
     /* ======ABOUT PAGE START====== */
     .fp__about_us_img {
         margin-right: 0;
@@ -199,10 +194,6 @@
     }
 
     /* ======ABOUT PAGE END====== */
-
-
-
-
     /* ======BLOG DETAILS START====== */
     .fp__blog_details_text h1,
     .fp__blog_details_text h2 {
@@ -235,8 +226,6 @@
     }
 
     /* ======BLOG DETAILS END====== */
-
-
     /* ======CONTACT START====== */
     .fp__contact_form {
         margin-bottom: 25px;
@@ -247,16 +236,12 @@
     }
 
     /* ======CONTACT END====== */
-
-
-
     /* ======DASHBOARD START====== */
     .fp__invoice_header .header_address {
         max-width: 45%;
     }
 
     /* ======DASHBOARD END====== */
-
     /* ======MENU DETAILS START====== */
     .fp__menu_details_text h2 {
         font-size: 30px;
@@ -271,7 +256,6 @@
     }
 
     /* ======MENU DETAILS END====== */
-
     .fp__single_payment {
         height: 80px;
     }
@@ -420,8 +404,6 @@
     }
 
     /* menu end */
-
-
     /* banner start */
     .fp__banner {
         padding-top: 130px;
@@ -455,7 +437,7 @@
     }
 
     .common_btn {
-        padding: 10px 55px 10px 20px !important;
+        padding: 10px 20px 10px 20px !important;
         font-size: 14px !important;
     }
 
@@ -469,16 +451,12 @@
     }
 
     /* banner end */
-
-
     /* why choose start */
     .fp__choose_single {
         border: none;
     }
 
     /* why choose end */
-
-
     /* daily offer start */
     .banner_shape_3 {
         width: 130px;
@@ -500,8 +478,6 @@
     }
 
     /* daily offer end */
-
-
     /* menu start */
     .fp__menu .banner_shape_2 {
         width: 90px;
@@ -517,8 +493,6 @@
     }
 
     /* menu end */
-
-
     /* special offer start */
     .fp__special_offer_text h3 {
         font-size: 30px;
@@ -543,8 +517,6 @@
     }
 
     /* special offer end */
-
-
     /* download app start */
     .fp__download_overlay {
         padding: 40px;
@@ -564,8 +536,6 @@
     }
 
     /* download app end */
-
-
     /* counter start */
     .fp__single_counter {
         margin-bottom: 30px;
@@ -576,7 +546,6 @@
     }
 
     /* counter end */
-
     .fp__testimonial_product {
         width: 80px;
         height: 80px;
@@ -605,8 +574,6 @@
     }
 
     /* blog end */
-
-
     /* footer start */
     .fp__footer_content {
         margin-bottom: 50px;
@@ -642,8 +609,6 @@
 
     /* footer end */
     /* ======HOME PAGE END====== */
-
-
     /* ======ABOUT PAGE START====== */
     .fp__breadcrumb_text h1 {
         font-size: 40px;
@@ -669,8 +634,6 @@
     }
 
     /* ======ABOUT PAGE END====== */
-
-
     /* ======BLOG DETAILS START====== */
     .fp__blog_details_img {
         height: 400px;
@@ -738,7 +701,6 @@
     }
 
     /* ======BLOG DETAILS END====== */
-
     .fp__cart_list {
         margin-bottom: 25px;
     }
@@ -758,8 +720,6 @@
     }
 
     /* ======CONTACT END====== */
-
-
     /* ======DASHBOARD START====== */
     .fp__dashboard_area {
         border: none;
@@ -840,7 +800,6 @@
     }
 
     /* ======DASHBOARD END====== */
-
     /* ======MENU DETAILS START====== */
     .fp__menu_details_images {
         height: 516px;
@@ -888,13 +847,11 @@
     }
 
     /* ======MENU DETAILS END====== */
-
     .fp__single_payment {
         height: 80px;
     }
 
     /* ======404 start====== */
-
     .fp__404_text h2 {
         font-size: 30px;
     }
@@ -905,7 +862,6 @@
     }
 
     /* ======404 END====== */
-
     .fp__terms_condition h3 {
         font-size: 22px;
     }
@@ -992,7 +948,6 @@
     }
 
     /* ======HOME 2 END====== */
-
     .details_extra_item .form-check label {
         max-width: 30%;
     }
@@ -1097,8 +1052,6 @@
     }
 
     /* topbar end */
-
-
     /* menu start */
     .main_menu .navbar-brand {
         width: 120px;
@@ -1178,10 +1131,7 @@
     }
 
     /* menu end */
-
-
     /* banner start */
-
     .fp__banner {
         padding-top: 80px;
         height: auto;
@@ -1219,7 +1169,7 @@
     }
 
     .common_btn {
-        padding: 10px 55px 10px 20px !important;
+        padding: 10px 20px 10px 20px !important;
         font-size: 14px !important;
     }
 
@@ -1245,16 +1195,12 @@
     }
 
     /* banner end */
-
-
     /* why choose start */
     .fp__choose_single {
         border: none;
     }
 
     /* why choose end */
-
-
     /* daily offer start */
     .banner_shape_3 {
         width: 130px;
@@ -1276,8 +1222,6 @@
     }
 
     /* daily offer end */
-
-
     /* menu start */
     .fp__menu .banner_shape_2 {
         width: 90px;
@@ -1301,8 +1245,6 @@
     }
 
     /* menu end */
-
-
     /* special offer start */
     .fp__special_offer_text h3 {
         font-size: 30px;
@@ -1327,7 +1269,6 @@
     }
 
     /* special offer end */
-
     /* download app start */
     .fp__download_overlay {
         padding: 20px;
@@ -1356,8 +1297,6 @@
     }
 
     /* download app end */
-
-
     /* counter start */
     .fp__single_counter {
         margin-bottom: 30px;
@@ -1385,8 +1324,6 @@
     }
 
     /* counter end */
-
-
     /* blog start */
     .fp__single_blog_img {
         height: 350px;
@@ -1410,8 +1347,6 @@
     }
 
     /* blog end */
-
-
     /* footer start */
     .fp__footer_content {
         margin-bottom: 50px;
@@ -1447,8 +1382,6 @@
 
     /* footer end */
     /* ======HOME PAGE END====== */
-
-
     /* ======ABOUT PAGE START====== */
     .fp__breadcrumb_text h1 {
         font-size: 30px;
@@ -1487,8 +1420,6 @@
     }
 
     /* ======ABOUT PAGE END====== */
-
-
     /* ======BLOG DETAILS START====== */
     .fp__blog_details_img {
         height: 300px;
@@ -1585,8 +1516,6 @@
     }
 
     /* ======BLOG DETAILS END====== */
-
-
     .fp__cart_list {
         margin-bottom: 25px;
     }
@@ -1613,8 +1542,6 @@
     }
 
     /* ======CONTACT END====== */
-
-
     /* ======DASHBOARD START====== */
     .fp__dashboard_area {
         border: none;
@@ -1691,7 +1618,6 @@
     }
 
     /* ======DASHBOARD END====== */
-
     /* ======LOGIN START====== */
     .fp__login_area {
         padding: 30px;
@@ -1702,8 +1628,6 @@
     }
 
     /* ======LOGIN END====== */
-
-
     /* ======MENU DETAILS START====== */
     .fp__menu_details_text {
         margin-top: 25px;
@@ -1747,7 +1671,6 @@
     }
 
     /* ======MENU DETAILS END====== */
-
     .fp__single_payment {
         height: 85px;
     }
@@ -1775,7 +1698,6 @@
     }
 
     /* ======404 END====== */
-
     .fp__blog_page .fp__single_blog {
         margin-top: 25px;
         margin-bottom: 0;
@@ -1870,7 +1792,6 @@
     }
 
     /* ======HOME 2 END====== */
-
     .details_extra_item .form-check label {
         max-width: 35%;
     }
@@ -1915,8 +1836,6 @@
     .fp__search_menu_form button {
         margin-top: 15px;
     }
-
-
 
 
     .droap_menu li a {
@@ -1988,8 +1907,6 @@
     }
 
     /* topbar end */
-
-
     /* menu start */
     .main_menu .navbar-brand {
         width: 120px;
@@ -2069,10 +1986,7 @@
     }
 
     /* menu end */
-
-
     /* banner start */
-
     .fp__banner {
         padding-top: 80px;
         height: auto;
@@ -2142,8 +2056,6 @@
     }
 
     /* banner end */
-
-
     /* why choose start */
     .fp__choose_single {
         border: none;
@@ -2154,8 +2066,6 @@
     }
 
     /* why choose end */
-
-
     /* daily offer start */
     .banner_shape_3 {
         width: 80px;
@@ -2205,8 +2115,6 @@
     }
 
     /* daily offer end */
-
-
     /* menu start */
     .fp__menu .banner_shape_2 {
         width: 60px;
@@ -2232,8 +2140,6 @@
     }
 
     /* menu end */
-
-
     /* special offer start */
     .fp__special_offer_text h3 {
         font-size: 22px;
@@ -2271,8 +2177,6 @@
     }
 
     /* special offer end */
-
-
     /* download app start */
     .fp__download_overlay {
         padding: 20px;
@@ -2300,8 +2204,6 @@
     }
 
     /* download app end */
-
-
     /* counter start */
     .fp__single_counter {
         justify-content: start;
@@ -2330,8 +2232,6 @@
     }
 
     /* counter end */
-
-
     /* testimonial start */
     .fp__testimonial_product {
         width: 75px;
@@ -2343,8 +2243,6 @@
     }
 
     /* testimonial end */
-
-
     /* blog start */
     .fp__single_blog_img {
         height: 350px;
@@ -2368,8 +2266,6 @@
     }
 
     /* blog end */
-
-
     /* footer start */
     .fp__footer_content {
         margin-bottom: 50px;
@@ -2409,8 +2305,6 @@
 
     /* footer end */
     /* ======HOME PAGE END====== */
-
-
     /* ======ABOUT PAGE START====== */
     .fp__breadcrumb_text h1 {
         font-size: 25px;
@@ -2465,8 +2359,6 @@
     }
 
     /* ======ABOUT PAGE END====== */
-
-
     /* ======BLOG DETAILS START====== */
     .fp__blog_details_img {
         height: 250px;
@@ -2593,7 +2485,6 @@
     }
 
     /* ======BLOG DETAILS END====== */
-
     .fp__cart_list {
         margin-bottom: 25px;
     }
@@ -2620,8 +2511,6 @@
     }
 
     /* ======CONTACT END====== */
-
-
     /* ======DASHBOARD START====== */
     .fp__dashboard_area {
         border: none;
@@ -2713,7 +2602,6 @@
     }
 
     /* ======DASHBOARD END====== */
-
     /* ======LOGIN START====== */
     .fp__login_area {
         padding: 20px;
@@ -2724,8 +2612,6 @@
     }
 
     /* ======LOGIN END====== */
-
-
     /* ======MENU DETAILS START====== */
     .fp__menu_details_text {
         margin-top: 25px;
@@ -2771,7 +2657,6 @@
     }
 
     /* ======MENU DETAILS END====== */
-
     .fp__single_payment {
         height: 80px;
     }
@@ -2799,7 +2684,6 @@
     }
 
     /* ======404 END====== */
-
     .fp__blog_page .fp__single_blog {
         margin-top: 25px;
         margin-bottom: 0;
@@ -2914,7 +2798,6 @@
     }
 
     /* ======HOME 2 END====== */
-
     .details_size .form-check label,
     .details_extra_item .form-check label {
         max-width: 80%;
