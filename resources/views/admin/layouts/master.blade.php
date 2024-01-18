@@ -84,11 +84,11 @@
 
 <script>
     // csrf ajax
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
+    // $.ajaxSetup({
+    //     headers: {
+    //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    //     }
+    // });
 
     $.uploadPreview({
         input_field: '#image-upload',   // Default: .image-upload
@@ -118,6 +118,9 @@
                     $.ajax({
                         method: 'DELETE',
                         url: url,
+                        data: {
+                            _token: "{{ csrf_token() }}"
+                        },
                         success: function (response) {
                             if (response.status === 'success') {
                                 Swal.fire({
@@ -125,7 +128,9 @@
                                     text: response.message,
                                     icon: 'success'
                                 });
-                                $('#slider-table').DataTable().draw();
+                                setTimeout(function () {
+                                    window.location.reload();
+                                }, 1000);
                             }
                         },
                         error: function (error) {
