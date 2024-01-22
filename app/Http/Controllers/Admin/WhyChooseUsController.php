@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\WhyChooseUsCreateRequest;
 use App\Models\SectionTitle;
 use App\Models\WhyChooseUs;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
@@ -54,17 +55,23 @@ class WhyChooseUsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id): View
     {
-        //
+        $whyChooseUs = WhyChooseUs::findOrFail($id);
+        return view('admin.why-choose-us.edit', compact('whyChooseUs'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(WhyChooseUsCreateRequest $request, string $id)
     {
-        //
+        $whyChooseUs = WhyChooseUs::findOrFail($id);
+        $whyChooseUs->update($request->validated());
+
+        toastr()->success('Created Successfully');
+
+        return to_route('admin.why-choose-us.index');
     }
 
     /**
