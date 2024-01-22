@@ -16,6 +16,8 @@
     <link rel="stylesheet"
           href="{{ asset('admin/assets/css/toastr.min.css')}}">
     <link rel="stylesheet"
+          href="{{ asset('admin/assets/css/bootstrap-iconpicker.css')}}">
+    <link rel="stylesheet"
           href="//cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
 
 
@@ -62,6 +64,8 @@
 <script src="{{asset('admin/assets/js/stisla.js')}}"></script>
 <!-- toastr js -->
 <script src="{{ asset('admin/assets/js/toastr.min.js')}}"></script>
+<!-- bootstrap iconpicker-->
+<script src="{{ asset('admin/assets/js/bootstrap-iconpicker.bundle.min.js')}}"></script>
 <script src="{{ asset('admin/assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js') }}"></script>
 <!-- SweetAlert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

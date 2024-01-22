@@ -25,7 +25,7 @@ class WhyChooseUsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.why-choose-us.create');
     }
 
     /**
@@ -70,7 +70,7 @@ class WhyChooseUsController extends Controller
             'why_choose_main_title' => ['max:200'],
             'why_choose_sub_title' => ['max:500'],
         ]);
-        
+
         SectionTitle::updateOrCreate(
             ['key' => 'why_choose_top_title'],
             ['value' => $request->why_choose_top_title]
