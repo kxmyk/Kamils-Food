@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Slider;
+use App\Models\WhyChooseUs;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,7 +23,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(UserSeeder::class);
         Slider::factory(5)->create();
-        $this->call(WhyChooseUsSeeder::class);
+        $this->call(WhyChooseUsTitleSeeder::class);
+        $this->call(WhyChooseUs::factory(3)->create());
 
 
     }
