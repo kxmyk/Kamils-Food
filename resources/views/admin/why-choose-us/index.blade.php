@@ -19,32 +19,33 @@
                              id="panel-body-1"
                              data-parent="#accordion"
                              style="">
-                            <form action=''
+                            <form action='{{ route('admin.why-choose-title-update') }}'
                                   method='POST'>
                                 @csrf
+                                @method('PUT')
                                 <div class="form-group">
                                     <label for="">Top Title</label>
                                     <input type="text"
                                            class="form-control"
                                            name='why_choose_top_title'
-                                           value='{{ $titles['why_choose_top_title'] }}'>
+                                           value='{{ @$titles['why_choose_top_title'] }}'>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Main Title</label>
                                     <input type="text"
                                            class="form-control"
                                            name='why_choose_main_title'
-                                           value='{{ $titles['why_choose_main_title'] }}'>
+                                           value='{{ @$titles['why_choose_main_title'] }}'>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Sub Title</label>
                                     <input type="text"
                                            class="form-control"
-                                           value='{{ $titles['why_choose_sub_title'] }}'>
+                                           name='why_choose_sub_title'
+                                           value='{{ @$titles['why_choose_sub_title'] }}'>
                                 </div>
                                 <button type="submit"
-                                        class="btn btn-primary"
-                                        name='why_choose_sub_title'>Save
+                                        class="btn btn-primary">Save
                                 </button>
                             </form>
                         </div>
