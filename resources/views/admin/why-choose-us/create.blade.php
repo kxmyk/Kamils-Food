@@ -9,7 +9,7 @@
                 <h4>Why Choose Us Section</h4>
             </div>
             <div class='card-body'>
-                <form action='{{ route('admin.slider.store') }}'
+                <form action='{{ route('admin.why-choose-us.store') }}'
                       method='post'
                       enctype="multipart/form-data">
                     @csrf
