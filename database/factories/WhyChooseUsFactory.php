@@ -18,7 +18,7 @@ class WhyChooseUsFactory extends Factory
     {
         return [
             'icon' => 'fas fa-align-justify',
-            'title' => fake()->sentence(5),
+            'title' => fake()->sentence(4),
             'short_description' => fake()->sentence(12),
             'status' => fake()->boolean(),
         ];
