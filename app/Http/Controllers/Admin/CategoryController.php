@@ -7,11 +7,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CategoryCreateRequest;
 use App\Http\Requests\Admin\CategoryUpdateRequest;
 use App\Models\Category;
-use App\Models\Slider;
-use App\Models\WhyChooseUs;
+use Exception;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class CategoryController extends Controller
@@ -97,7 +95,7 @@ class CategoryController extends Controller
                 'status' => 'success',
                 'message' => 'Deleted Successfully'
             ]);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
 
             return response([
                 'status' => 'error',
