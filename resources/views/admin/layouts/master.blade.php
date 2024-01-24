@@ -19,6 +19,10 @@
           href="{{ asset('admin/assets/css/bootstrap-iconpicker.css')}}">
     <link rel="stylesheet"
           href="//cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <link rel='stylesheet'
+          href={{asset('admin/assets/modules/select2/dist/css/select2.min.css')}}>
+    <link rel='stylesheet'
+          href={{ asset('admin/assets/modules/summernote/summernote-bs4.css')}}>
 
 
     <!-- Template CSS -->
@@ -74,6 +78,8 @@
 <!-- Template JS File -->
 <script src="{{asset('admin/assets/js/scripts.js')}}"></script>
 <script src="{{asset('admin/assets/js/custom.js')}}"></script>
+<script src={{ asset('admin/assets/modules/select2/dist/js/select2.full.min.js')}}></script>
+<script src={{asset('admin/assets/modules/summernote/summernote-bs4.js')}}></script>
 
 
 <script>
