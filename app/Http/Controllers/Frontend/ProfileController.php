@@ -9,6 +9,7 @@ use App\Traits\FileUploadTrait;
 use Auth;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ProfileController extends Controller
 {
@@ -36,7 +37,7 @@ class ProfileController extends Controller
         return redirect()->back();
     }
 
-    function updateAvatar(Request $request)
+    function updateAvatar(Request $request): Response
     {
 
         $user = Auth::user();

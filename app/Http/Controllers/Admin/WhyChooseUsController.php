@@ -7,16 +7,19 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\WhyChooseUsCreateRequest;
 use App\Models\SectionTitle;
 use App\Models\WhyChooseUs;
+use Exception;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class WhyChooseUsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(WhyChooseUsDataTable $dataTable)
+    public function index(WhyChooseUsDataTable $dataTable): View|JsonResponse
     {
         $keys = [
             'why_choose_top_title',
@@ -26,14 +29,6 @@ class WhyChooseUsController extends Controller
         $titles = SectionTitle::whereIn('key', $keys)->pluck('value', 'key');
 
         return $dataTable->render('admin.why-choose-us.index', compact('titles'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        return view('admin.why-choose-us.create');
     }
 
     /**
@@ -49,11 +44,11 @@ class WhyChooseUsController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Show the form for creating a new resource.
      */
-    public function show(string $id)
+    public function create()
     {
-        //
+        return view('admin.why-choose-us.create');
     }
 
     /**
@@ -68,7 +63,7 @@ class WhyChooseUsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(WhyChooseUsCreateRequest $request, string $id)
+    public function update(WhyChooseUsCreateRequest $request, string $id): RedirectResponse
     {
         $whyChooseUs = WhyChooseUs::findOrFail($id);
         $whyChooseUs->update($request->validated());
@@ -81,7 +76,7 @@ class WhyChooseUsController extends Controller
     /**
      * Update the section title in storage.
      */
-    public function updateTitle(Request $request)
+    public function updateTitle(Request $request): RedirectResponse
     {
         $request->validate([
             'why_choose_top_title' => ['max:100'],
@@ -110,7 +105,7 @@ class WhyChooseUsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id): Response
     {
         try {
             $whyChooseUs = WhyChooseUs::findOrFail($id);
@@ -120,7 +115,7 @@ class WhyChooseUsController extends Controller
                 'status' => 'success',
                 'message' => 'Deleted Successfully'
             ]);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
 
             return response([
                 'status' => 'error',

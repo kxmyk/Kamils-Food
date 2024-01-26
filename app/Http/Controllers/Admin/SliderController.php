@@ -8,8 +8,11 @@ use App\Http\Requests\Admin\SliderCreateRequest;
 use App\Http\Requests\Admin\SliderUpdateRequest;
 use App\Models\Slider;
 use App\Traits\FileUploadTrait;
+use Exception;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Response;
 
 class SliderController extends Controller
 {
@@ -18,7 +21,7 @@ class SliderController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(SliderDataTable $dataTable)
+    public function index(SliderDataTable $dataTable): View|JsonResponse
     {
         return $dataTable->render('admin.slider.index');
     }
@@ -51,14 +54,6 @@ class SliderController extends Controller
         toastr()->success('Slider Created Successfully');
 
         return to_route('admin.slider.index');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
     }
 
     /**
@@ -98,7 +93,7 @@ class SliderController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id): Response
     {
         try {
             $slider = Slider::findOrFail($id);
@@ -108,7 +103,7 @@ class SliderController extends Controller
                 'status' => 'success',
                 'message' => 'Deleted Successfully',
             ]);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return response([
                 'status' => 'error',
                 'message' => $e->getMessage(),
