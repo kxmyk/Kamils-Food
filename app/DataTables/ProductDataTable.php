@@ -44,10 +44,10 @@ class ProductDataTable extends DataTable
                 return '$' . $query->price;
             })
             ->addColumn('show_at_home', function ($query) {
-                if ($query->status === 1) {
-                    return '<span class="badge badge-primary">Active</span>';
+                if ($query->show_at_home === 1) {
+                    return '<span class="badge badge-primary">Yes</span>';
                 } else {
-                    return '<span class="badge badge-danger">InActive</span>';
+                    return '<span class="badge badge-danger">No</span>';
                 }
             })
             ->addColumn('status', function ($query) {
@@ -60,7 +60,7 @@ class ProductDataTable extends DataTable
             ->addColumn('thumb_image', function ($query) {
                 return '<img width="60px" src="' . asset($query->thumb_image) . '">';
             })
-            ->rawColumns(['show_at_home', 'status', 'action', 'thumb_image']);
+            ->rawColumns(['thumb_image', 'show_at_home', 'status', 'action',]);
     }
 
     /**

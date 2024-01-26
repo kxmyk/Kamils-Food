@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\DataTables\ProductDataTable;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\ProductUpdateRequest;
 use App\Models\Category;
 use App\Models\Product;
 use App\Traits\FileUploadTrait;
@@ -71,17 +72,40 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id): View
     {
-        //
+        $categories = Category::all();
+        $product = Product::findOrFail($id);
+
+        return view('admin.product.edit', compact('categories', 'product'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(ProductUpdateRequest $request, string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $imagePath = $this->uploadImage($request, 'thumb_image');
+
+        $product->thumb_image = !empty($imagePath) ? $imagePath : $product->thumb_image;
+        $product->name = $request->name;
+        $product->short_description = $request->short_description;
+        $product->long_description = $request->long_description;
+        $product->category_id = $request->category_id;
+        $product->price = $request->price;
+        $product->offer_price = $request->offer_price;
+        $product->sku = $request->sku;
+        $product->seo_title = $request->seo_title;
+        $product->seo_description = $request->seo_description;
+        $product->show_at_home = $request->show_at_home;
+        $product->status = $request->status;
+
+        $product->update();
+
+        toastr()->success('Product Updated Successfully');
+
+        return to_route('admin.product.index');
     }
 
     /**
