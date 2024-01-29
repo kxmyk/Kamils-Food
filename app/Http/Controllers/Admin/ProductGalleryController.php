@@ -3,10 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use App\Models\ProductGallery;
 use App\Traits\FileUploadTrait;
+use Exception;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ProductGalleryController extends Controller
 {
@@ -17,21 +21,16 @@ class ProductGalleryController extends Controller
      */
     public function index(string $productId): View
     {
-        return view('admin.product.gallery.index', compact('productId'));
-    }
+        $productGallery = ProductGallery::where('product_id', $productId)->get();
+        $product = Product::findOrFail($productId);
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return view('admin.product.gallery.index', compact('product', 'productGallery'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $request->validate([
             'image' => ['required', 'image', 'max:3000'],
@@ -52,34 +51,25 @@ class ProductGalleryController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id): Response
     {
-        //
+        try {
+            $productGallery = ProductGallery::findOrFail($id);
+            $this->removeImage($productGallery->image);
+            $productGallery->delete();
+
+            return response([
+                'status' => 'success',
+                'message' => 'Deleted Successfully'
+            ]);
+        } catch (Exception $e) {
+
+            return response([
+                'status' => 'error',
+                'message' => $e->getMessage()
+            ]);
+        }
     }
 }
