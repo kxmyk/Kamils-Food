@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductSize;
+use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -17,8 +18,9 @@ class ProductSizeController extends Controller
     public function index(string $productId): View
     {
         $product = Product::findOrFail($productId);
+        $sizes = ProductSize::where('product_id', $product->id)->get();
 
-        return view('admin.product.product-size.index', compact('product'));
+        return view('admin.product.product-size.index', compact('product', 'sizes'));
     }
 
     /**
@@ -48,6 +50,20 @@ class ProductSizeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try {
+            $size = ProductSize::findOrFail($id);
+            $size->delete();
+
+            return response([
+                'status' => 'success',
+                'message' => 'Deleted Successfully'
+            ]);
+        } catch (Exception $e) {
+
+            return response([
+                'status' => 'error',
+                'message' => $e->getMessage()
+            ]);
+        }
     }
 }

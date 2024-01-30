@@ -50,6 +50,36 @@
             </form>
         </div>
 
+        <div class='card card-primary'>
+            <div class='card-body'>
+                <table class='table table-bordered'>
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($sizes as $size)
+                        <tr>
+                            <td>{{$size->name}}</td>
+                            <td>{{$size->price}}</td>
+                            <td><a href='{{ route('admin.product-size.destroy', $size->id) }}'
+                                   class='btn btn-danger delete-item
+                                mx-2'><i class='fas fa-trash'></i></a></td>
+                        </tr>
+                    @endforeach()
+                    @if( count($sizes) === 0)
+                        <tr>
+                            <td>No data</td>
+                        </tr>
+                    @endif
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
     </section>
 @endsection
 
