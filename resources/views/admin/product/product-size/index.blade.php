@@ -2,7 +2,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>{{ $product->name }} Sizes </h1>
+            <h1>{{ $product->name }} Product Variants </h1>
         </div>
 
         <div>
@@ -13,7 +13,7 @@
             <div class='col-md-6'>
                 <div class='card card-primary'>
                     <div class='card-header'>
-                        <h4>Create Sizes</h4>
+                        <h4>Create Product Size</h4>
 
                     </div>
                     <div class='card-body'>
@@ -58,6 +58,9 @@
                                                card
                                                card-primary'>
                     <div class='card-body'>
+                        <div class='card-header'>
+                            <h4>Product Sizes </h4>
+                        </div>
                         <table class='table table-bordered'>
                             <thead>
                             <tr>
@@ -90,7 +93,7 @@
             <div class='col-md-6'>
                 <div class='card card-primary'>
                     <div class='card-header'>
-                        <h4>Create Options </h4>
+                        <h4>Create Product Options </h4>
 
                     </div>
                     <div class='card-body'>
@@ -134,6 +137,9 @@
 
                 <div class='card card-primary'>
                     <div class='card-body'>
+                        <div class='card-header'>
+                            <h4>Product Options </h4>
+                        </div>
                         <table class='table table-bordered'>
                             <thead>
                             <tr>
@@ -164,8 +170,7 @@
                 </div>
             </div>
         </div>
-
-
+        
     </section>
 @endsection
 
