@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\ProductOption;
 use App\Models\ProductSize;
 use Exception;
 use Illuminate\Http\RedirectResponse;
@@ -19,8 +20,9 @@ class ProductSizeController extends Controller
     {
         $product = Product::findOrFail($productId);
         $sizes = ProductSize::where('product_id', $product->id)->get();
+        $options = ProductOption::where('product_id', $product->id)->get();
 
-        return view('admin.product.product-size.index', compact('product', 'sizes'));
+        return view('admin.product.product-size.index', compact('product', 'sizes', 'options'));
     }
 
     /**
@@ -32,6 +34,11 @@ class ProductSizeController extends Controller
             'name' => ['required', 'max:255'],
             'price' => ['required', 'numeric'],
             'product_id' => ['required', 'integer']
+        ], [
+            'name.required' => 'Product size name is required',
+            'name.max' => 'Product size name max length is 255',
+            'price.required' => 'Product size price is required',
+            'price.max' => 'Product size price max length is 255',
         ]);
 
         $productSize = new ProductSize();
@@ -51,8 +58,8 @@ class ProductSizeController extends Controller
     public function destroy(string $id)
     {
         try {
-            $size = ProductSize::findOrFail($id);
-            $size->delete();
+            $productSize = ProductSize::findOrFail($id);
+            $productSize->delete();
 
             return response([
                 'status' => 'success',
