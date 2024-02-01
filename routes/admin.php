@@ -22,7 +22,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
 
     /******************* Section Title Routes *******************/
-    /** Slider Routes */
     Route::resource('slider', SliderController::class);
 
     /** Why Choose Us Routes */
@@ -31,7 +30,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
 
     /******************* Product Routes *******************/
-    /** Product Routes */
     Route::resource('product', ProductController::class);
 
     /** Product Categories Routes */

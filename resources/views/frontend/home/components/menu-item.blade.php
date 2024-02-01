@@ -64,7 +64,7 @@
                                     <span>145</span>
                                 </p>
                                 <a class="title"
-                                   href="menu_details.html">{{ $product->name }}</a>
+                                   href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
                                 <h5 class="price">
                                     @if ($product->offer_price > 0)
                                         ${{ $product->offer_price }}
