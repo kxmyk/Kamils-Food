@@ -2,7 +2,6 @@
 
 namespace App\Traits;
 
-use File;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
 
