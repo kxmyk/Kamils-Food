@@ -66,11 +66,12 @@
                             <span>(201)</span>
                         </p>
                         <h3 class='price'>
-                            @if ($product->offer_price > 0)
-                                $ {{ $product->offer_price }}
-                                <del>${{ $product->price }}</del>
+                            <h5 class='price'>
+                                @if ($product->offer_price > 0)
+                                    {{ currencyPosition($product->offer_price) }}
+                                    <del>{{ currencyPosition($product->price) }}</del>
                             @else
-                                {{ $product->price }}
+                                {{ currencyPosition($product->price) }}
                             @endif
                         </h3>
                         <p class='short_description'>{{ $product->short_description }}</p>
@@ -279,10 +280,10 @@
                                            href='{{ route('product.show', $relatedProduct->slug) }}'>{{ $relatedProduct->name }}</a>
                                         <h5 class='price'>
                                             @if ($product->offer_price > 0)
-                                                ${{ $product->offer_price }}
-                                                <del>${{ $product->price }}</del>
+                                                {{ currencyPosition($product->offer_price) }}
+                                                <del>{{ currencyPosition($product->price) }}</del>
                                             @else
-                                                {{ $product->price }}
+                                                {{ currencyPosition($product->price) }}
                                             @endif
                                         </h5>
                                         <ul class='d-flex flex-wrap justify-content-center'>

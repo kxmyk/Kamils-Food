@@ -35,10 +35,10 @@ class ProductDataTable extends DataTable
                 return $edit . $delete . $more;
             })
             ->addColumn('price', function ($query) {
-                return '$' . $query->price;
+                return currencyPosition($query->price);
             })
             ->addColumn('offer_price', function ($query) {
-                return '$' . $query->price;
+                return currencyPosition($query->price);
             })
             ->addColumn('show_at_home', function ($query) {
                 if ($query->show_at_home === 1) {
