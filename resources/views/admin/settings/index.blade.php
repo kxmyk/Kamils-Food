@@ -69,7 +69,12 @@
                                                 <label for="">Default Currency</label>
                                                 <select name="site_default_currency"
                                                         class="select2 form-control">
-                                                    <option value="usd">usd</option>
+                                                    <option value="{{ config('settings.site_default_currency') }}">
+                                                        Select
+                                                    </option>
+                                                    @foreach( config('currencies.currency_list') as $currency)
+                                                        <option value='{{ $currency }}'> {{$currency}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                             <div class="row">

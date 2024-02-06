@@ -20,8 +20,8 @@ class SettingsController extends Controller
     {
         $validatedData = $request->validate([
             'site_name' => ['required', 'max:255'],
-            'site_default_currency' => ['required', 'max:3'],
-            'site_currency_icon' => ['required', 'max:3'],
+            'site_default_currency' => ['required', 'max:4'],
+            'site_currency_icon' => ['required', 'max:4'],
             'site_currency_icon_position' => ['required', 'max:255']
         ]);
 
