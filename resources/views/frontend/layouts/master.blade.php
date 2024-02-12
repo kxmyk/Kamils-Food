@@ -35,11 +35,18 @@
           href="{{ asset('frontend/css/responsive.css')}}">
     <link rel="stylesheet"
           href="{{ asset('frontend/css/toastr.min.css')}}">
+    <link rel="stylesheet"
+          href="{{ asset('frontend/css/custom.css')}}">
     <!-- <link rel="stylesheet" href="css/rtl.css"> -->
 </head>
 
 <body>
 
+<div class="overlay-container">
+    <div class="overlay">
+        <span class="loader"></span>
+    </div>
+</div>
 <!--=============================
     TOPBAR START
 ==============================-->
