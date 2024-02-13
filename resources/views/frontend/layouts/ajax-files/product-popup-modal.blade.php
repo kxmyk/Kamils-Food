@@ -4,7 +4,11 @@
         aria-label="Close"><i
         class="fal fa-times"></i></button>
 <form action=''
-      method='POST'>
+      method='POST'
+      id='modal_add_to_cart_form'>
+    <input type='hidden'
+           name='product_id'
+           value='{{$product->id}}'>
     <div class="fp__cart_popup_img">
         <img src="{{ asset($product->thumb_image) }}"
              alt="menu"
@@ -46,7 +50,7 @@
                                type="radio"
                                data-price='{{ $size->price }}'
                                name="product_size"
-                               value='{{ $size->price }}'
+                               value='{{ $size->id }}'
                                id="size-{{$size->id}}">
                         <label class="form-check-label"
                                for="size-{{$size->id}}">
@@ -66,7 +70,7 @@
                                type="checkbox"
                                data-price='{{ $option->price }}'
                                name='product_option[]'
-                               value="{{ $option->price }}"
+                               value="{{ $option->id }}"
                                id="option-{{ $option->id }}">
                         <label class="form-check-label"
                                for="option-{{ $option->id }}">
@@ -86,6 +90,7 @@
                            placeholder="1"
                            value='1'
                            id='quantity'
+                           name='quantity'
                            readonly>
                     <button class="btn btn-success increment"><i class="fal fa-plus"></i></button>
                 </div>
@@ -97,8 +102,11 @@
             </div>
         </div>
         <ul class="details_button_area d-flex flex-wrap">
-            <li><a class="common_btn"
-                   href="#">add to cart</a></li>
+            <li>
+                <button type='submit'
+                        class='common_btn'>add to cart
+                </button>
+            </li>
         </ul>
     </div>
 
@@ -158,5 +166,23 @@
             $('#total_price').text("{{ config('settings.site_currency_icon') }}" + totalPrice);
             return totalPrice;
         }
+
+        $('#modal_add_to_cart_form').on('submit', function (e) {
+            e.preventDefault();
+            let formData = $(this).serialize();
+
+            $.ajax({
+                method: 'POST',
+                url: '{{ route('add-to-cart') }}',
+                data: formData,
+                success: function (response) {
+
+                },
+                error: function (xhr, status, error) {
+
+                },
+            });
+
+        });
     });
 </script>

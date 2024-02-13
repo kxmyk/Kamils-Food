@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\ProfileController;
@@ -39,6 +40,6 @@ require __DIR__ . '/auth.php';
 Route::get('/product/{slug}', [FrontendController::class, 'showProduct'])->name('product.show');
 Route::get('/load-product-modal/{productId}', [FrontendController::class, 'loadProductModal'])->name('load-product-modal');
 
-
-
+/******************* Cart Routes *******************/
+Route::post('add-to-cart', [CartController::class, 'addToCart'])->name('add-to-cart');
 
