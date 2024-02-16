@@ -12,6 +12,7 @@ class CartController extends Controller
 {
     function addToCart(Request $request)
     {
+//        Cart::destroy();
         try {
 
             $product = Product::with(['sizes', 'options'])->findOrFail($request->product_id);
@@ -28,9 +29,9 @@ class CartController extends Controller
             ];
 
             if ($productSize !== null) {
-                $options['product_options'][] = [
+                $options['product_size'][] = [
                     'id' => $productSize?->id,
-                    'size' => $productSize?->name,
+                    'name' => $productSize?->name,
                     'price' => $productSize?->price
                 ];
             }
