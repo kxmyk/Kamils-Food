@@ -1,3 +1,6 @@
+<input type='hidden'
+       value='{{ currencyPosition(cartTotal()) }}'
+       id='cart_total'>
 @foreach( Cart::content() as $item)
     <li>
         <div class="menu_cart_img">

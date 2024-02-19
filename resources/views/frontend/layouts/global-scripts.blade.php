@@ -35,6 +35,7 @@
             },
             success: function (response) {
                 $('.cart_contents').html(response);
+                $('.cart_total').html($('#cart_total').val());
             },
             error: function (xhr, status, error) {
                 console.error(error);

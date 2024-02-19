@@ -23,6 +23,7 @@ if (!function_exists('generateUniqueSlug')) {
     }
 }
 
+/** Place currency symbol in right position */
 if (!function_exists('currencyPosition')) {
     function currencyPosition($price): string
     {
@@ -31,5 +32,26 @@ if (!function_exists('currencyPosition')) {
         } else {
             return $price . config('settings.site_currency_icon');
         }
+    }
+}
+
+/** Calculate the total price */
+if (!function_exists('cartTotal')) {
+    function cartTotal(): string
+    {
+        $total = 0;
+        foreach (Cart::content() as $item) {
+            $productPrice = $item->price;
+            $sizePrice = $item->options?->product_size[0]['price'] ?? 0;
+            $optionPrice = 0;
+            foreach ($item->options?->product_options as $option) {
+                $optionPrice += $option['price'];
+            }
+
+            $total += ($productPrice + $sizePrice + $optionPrice) * $item->qty;
+
+        }
+
+        return $total;
     }
 }
