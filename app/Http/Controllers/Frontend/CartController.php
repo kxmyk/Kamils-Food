@@ -59,4 +59,10 @@ class CartController extends Controller
             return response(['status' => 'error', 'message' => 'Something went wrong!'], 500);
         }
     }
+
+    function getCartProduct()
+    {
+        return view('frontend.layouts.ajax-files.sidebar-cart-item')->render();
+    }
+
 }
