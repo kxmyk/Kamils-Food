@@ -45,4 +45,19 @@
             }
         });
     }
+
+    /** Remove cart product **/
+    function removeProductFromSidebar($rowId) 
+    {
+        $.ajax({
+            method: 'GET',
+            url: '{{ route("cart-product-remove", ":rowId") }}'.replace(":rowId", $rowId),
+            success: function($response) {
+
+            },
+            error(xhr, status, error) {
+                console.error(error)
+            }
+        })
+    }
 </script>

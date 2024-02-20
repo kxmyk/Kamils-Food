@@ -4,15 +4,16 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use Exception;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
-use Mockery\Exception;
+use Illuminate\Http\Response;
 
 class CartController extends Controller
 {
     function addToCart(Request $request)
     {
-//        Cart::destroy();
+        // Cart::destroy();
         try {
 
             $product = Product::with(['sizes', 'options'])->findOrFail($request->product_id);
@@ -54,7 +55,6 @@ class CartController extends Controller
             ]);
 
             return response(['status' => 'success', 'message' => 'Product added into cart!'], 200);
-
         } catch (Exception $e) {
             return response(['status' => 'error', 'message' => 'Something went wrong!'], 500);
         }
@@ -65,4 +65,15 @@ class CartController extends Controller
         return view('frontend.layouts.ajax-files.sidebar-cart-item')->render();
     }
 
+    function cartProductRemove($rowId): Response
+    {
+        try {
+            Cart::remove($rowId);
+
+            return response(['status' => 'success', 'message' => 'Product deleted successfully'], 200);
+        } catch (Exception $e) {
+
+            return response(['status' => 'error', 'message' => 'Something went wrong'], 500);
+        }
+    }
 }

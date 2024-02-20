@@ -122,7 +122,5 @@ class WhyChooseUsController extends Controller
                 'message' => $e->getMessage()
             ]);
         }
-
-
     }
 }
