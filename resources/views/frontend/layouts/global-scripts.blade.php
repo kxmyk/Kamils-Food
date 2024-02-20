@@ -1,5 +1,4 @@
 <script>
-
     /** Loard product modal**/
     function loadProductModal(productId) {
         $.ajax({
@@ -36,6 +35,7 @@
             success: function (response) {
                 $('.cart_contents').html(response);
                 $('.cart_total').html($('#cart_total').val());
+                $('.cart_count').html($('#cart_product_count').val());
             },
             error: function (xhr, status, error) {
                 console.error(error);
