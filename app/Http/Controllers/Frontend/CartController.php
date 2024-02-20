@@ -11,9 +11,8 @@ use Illuminate\Http\Response;
 
 class CartController extends Controller
 {
-    function addToCart(Request $request)
+    public function addToCart(Request $request)
     {
-        // Cart::destroy();
         try {
 
             $product = Product::with(['sizes', 'options'])->findOrFail($request->product_id);
@@ -25,15 +24,15 @@ class CartController extends Controller
                 'product_options' => [],
                 'product_info' => [
                     'image' => $product->thumb_image,
-                    'slug' => $product->slug
-                ]
+                    'slug' => $product->slug,
+                ],
             ];
 
             if ($productSize !== null) {
                 $options['product_size'][] = [
                     'id' => $productSize?->id,
                     'name' => $productSize?->name,
-                    'price' => $productSize?->price
+                    'price' => $productSize?->price,
                 ];
             }
 
@@ -41,7 +40,7 @@ class CartController extends Controller
                 $options['product_options'][] = [
                     'id' => $option->id,
                     'name' => $option->name,
-                    'price' => $option->price
+                    'price' => $option->price,
                 ];
             }
 
@@ -51,23 +50,25 @@ class CartController extends Controller
                 'qty' => $request->quantity,
                 'price' => $product->offer_price > 0 ? $product->offer_price : $product->price,
                 'weight' => 0,
-                'options' => $options
+                'options' => $options,
             ]);
 
             return response(['status' => 'success', 'message' => 'Product added into cart!'], 200);
         } catch (Exception $e) {
+
             return response(['status' => 'error', 'message' => 'Something went wrong!'], 500);
         }
     }
 
-    function getCartProduct()
+    public function getCartProduct()
     {
         return view('frontend.layouts.ajax-files.sidebar-cart-item')->render();
     }
 
-    function cartProductRemove($rowId): Response
+    public function cartProductRemove($rowId): Response
     {
         try {
+
             Cart::remove($rowId);
 
             return response(['status' => 'success', 'message' => 'Product deleted successfully'], 200);

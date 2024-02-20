@@ -29,9 +29,6 @@
         $.ajax({
             method: 'GET',
             url: '{{ route('get-cart-products') }}',
-            beforeSend: function () {
-
-            },
             success: function (response) {
                 $('.cart_contents').html(response);
                 $('.cart_total').html($('#cart_total').val());
@@ -47,16 +44,30 @@
     }
 
     /** Remove cart product **/
-    function removeProductFromSidebar($rowId) 
+    function removeProductFromSidebar($rowId)
     {
         $.ajax({
             method: 'GET',
             url: '{{ route("cart-product-remove", ":rowId") }}'.replace(":rowId", $rowId),
-            success: function($response) {
+            beforeSend: function () {
+                $('.overlay-container').removeClass('d-none');
+                $('.overlay').addClass('active');
 
+            },
+            success: function(response) {
+                if (response.status === 'success') {
+                    updateSidebarCart();
+                    toastr.success(response.message);
+                }
             },
             error(xhr, status, error) {
                 console.error(error)
+                toastr.error(xhr.responseJSON.message);
+            },
+            complete: function () {
+                $('.overlay').removeClass('active');
+                $('.overlay-container').addClass('d-none');
+
             }
         })
     }
