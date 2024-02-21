@@ -1,5 +1,5 @@
 <script>
-    /** Loard product modal**/
+    /** Load product modal**/
     function loadProductModal(productId) {
         $.ajax({
             method: 'GET',
