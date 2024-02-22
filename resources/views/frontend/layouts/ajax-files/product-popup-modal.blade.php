@@ -146,6 +146,8 @@
             return totalPrice;
         }
 
+
+        // Add to cart function
         $('#modal_add_to_cart_form').on('submit', function (e) {
             e.preventDefault();
 

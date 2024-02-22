@@ -13,6 +13,8 @@ class CartController extends Controller
 {
     public function addToCart(Request $request)
     {
+        // dd($request->all());
+
         try {
 
             $product = Product::with(['sizes', 'options'])->findOrFail($request->product_id);
@@ -55,6 +57,7 @@ class CartController extends Controller
 
             return response(['status' => 'success', 'message' => 'Product added into cart!'], 200);
         } catch (Exception $e) {
+            logger($e);
 
             return response(['status' => 'error', 'message' => 'Something went wrong!'], 500);
         }
