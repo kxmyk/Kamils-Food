@@ -8,12 +8,17 @@ use Exception;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\View\View;
 
 class CartController extends Controller
 {
+    public function index(): View
+    {
+        return view('frontend.pages.cart-view');
+    }
+
     public function addToCart(Request $request)
     {
-        // dd($request->all());
 
         try {
 
