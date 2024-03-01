@@ -50,9 +50,7 @@
             method: 'GET',
             url: '{{ route("cart-product-remove", ":rowId") }}'.replace(":rowId", $rowId),
             beforeSend: function () {
-                $('.overlay-container').removeClass('d-none');
-                $('.overlay').addClass('active');
-
+                showLoader()
             },
             success: function(response) {
                 if (response.status === 'success') {
@@ -65,10 +63,18 @@
                 toastr.error(xhr.responseJSON.message);
             },
             complete: function () {
-                $('.overlay').removeClass('active');
-                $('.overlay-container').addClass('d-none');
-
+                hideLoader()
             }
         })
+    }
+
+    function showLoader(){
+        $('.overlay').addClass('active');
+        $('.overlay-container').removeClass('d-none');
+    }
+
+    function hideLoader(){
+        $('.overlay').removeClass('active');
+        $('.overlay-container').addClass('d-none');
     }
 </script>
