@@ -1,6 +1,5 @@
 <?php
 
-
 /** Create unique slug */
 if (!function_exists('generateUniqueSlug')) {
     function generateUniqueSlug($model, $name): string
@@ -51,6 +50,28 @@ if (!function_exists('cartTotal')) {
             $total += ($productPrice + $sizePrice + $optionPrice) * $item->qty;
 
         }
+
+        return $total;
+    }
+}
+
+/** Calculate product total price */
+if (!function_exists('productTotal')) {
+    function productTotal($rowId)
+    {
+        $total = 0;
+
+        $product = Cart::get($rowId);
+
+        $productPrice = $product->price;
+        $sizePrice = $product->options?->product_size[0]['price'] ?? 0;
+        $optionsPrice = 0;
+
+        foreach ($product->options->product_options as $option) {
+            $optionsPrice += $option['price'];
+        }
+
+        $total += ($productPrice + $sizePrice + $optionsPrice) * $product->qty;
 
         return $total;
     }
