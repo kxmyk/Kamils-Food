@@ -94,7 +94,8 @@
                   </td>
 
                   <td class="fp__pro_icon">
-                    <a href="#"><i class="far fa-times"></i></a>
+                    <a href="#" class="remove_cart_product" data-id="{{ $product->rowId }}"><i
+                        class="far fa-times"></i></a>
                   </td>
                 </tr>
                 @endforeach
@@ -187,6 +188,34 @@
                     }
                 })
             }
+
+$('.remove_cart_product').on('click', function(e){
+        e.preventDefault();
+        let rowId = $(this).data('id');
+        removeCartProduct(rowId);
+        $(this).closest('tr').remove();
+        })
+        
+        function removeCartProduct(rowId){
+        $.ajax({
+        method: 'get',
+        url: '{{ route("cart-product-remove", ":rowId") }}'.replace(":rowId", rowId),
+        beforeSend: function(){
+        showLoader();
+        },
+        success: function(response){
+        updateSidebarCart();
+        },
+        error: function(xhr, status, error){
+        let errorMessage = xhr.responseJSON.message;
+        hideLoader();
+        toastr.error(errorMessage);
+        },
+        complete: function(){
+        hideLoader();
+        }
+        })
+        }
         })
 </script>
 @endpush
