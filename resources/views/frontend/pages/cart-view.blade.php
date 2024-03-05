@@ -55,7 +55,7 @@
                   </th>
 
                   <th class="fp__pro_icon">
-                    <a class="clear_all" href="#">clear all</a>
+                    <a class="clear_all" href="{{ route('cart.destroy') }}">clear all</a>
                   </th>
                 </tr>
 
@@ -99,6 +99,12 @@
                   </td>
                 </tr>
                 @endforeach
+                @if (Cart::content()->count() === 0)
+                <tr>
+                  <td colspan="6" class="text-center fp__pro_name" style="width: 100%;display: inline;">Cart is empty!
+                  </td>
+                </tr>
+                @endif
               </tbody>
             </table>
           </div>
@@ -204,6 +210,7 @@ $('.remove_cart_product').on('click', function(e){
         showLoader();
         },
         success: function(response){
+
         updateSidebarCart();
         },
         error: function(xhr, status, error){

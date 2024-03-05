@@ -100,4 +100,11 @@ class CartController extends Controller
         }
     }
 
+    public function cartDestroy()
+    {
+        Cart::destroy();
+
+        return redirect()->back();
+    }
+
 }
