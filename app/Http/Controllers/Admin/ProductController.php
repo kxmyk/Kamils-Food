@@ -22,7 +22,7 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(ProductDataTable $dataTable): View|JsonResponse
+    public function index(ProductDataTable $dataTable): View | JsonResponse
     {
         return $dataTable->render('admin.product.index');
     }
@@ -51,7 +51,8 @@ class ProductController extends Controller
         $product->long_description = $request->long_description;
         $product->category_id = $request->category_id;
         $product->price = $request->price;
-        $product->offer_price = $request->offer_price;
+        $product->offer_price = $request->offer_price ?? 0;
+        $product->quantity = $request->quantity;
         $product->sku = $request->sku;
         $product->seo_title = $request->seo_title;
         $product->seo_description = $request->seo_description;
@@ -90,7 +91,8 @@ class ProductController extends Controller
         $product->long_description = $request->long_description;
         $product->category_id = $request->category_id;
         $product->price = $request->price;
-        $product->offer_price = $request->offer_price;
+        $product->offer_price = $request->offer_price ?? 0;
+        $product->quantity = $request->quantity;
         $product->sku = $request->sku;
         $product->seo_title = $request->seo_title;
         $product->seo_description = $request->seo_description;
@@ -116,13 +118,13 @@ class ProductController extends Controller
 
             return response([
                 'status' => 'success',
-                'message' => 'Deleted Successfully'
+                'message' => 'Deleted Successfully',
             ]);
         } catch (Exception $e) {
 
             return response([
                 'status' => 'error',
-                'message' => $e->getMessage()
+                'message' => $e->getMessage(),
             ]);
         }
     }

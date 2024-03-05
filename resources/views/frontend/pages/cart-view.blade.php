@@ -134,95 +134,111 @@
 
 @push('scripts')
 <script>
-  $(document).ready(function(){
-            $('.increment').on('click', function(){
+  $(document).ready(function() {
+            $('.increment').on('click', function() {
                 let inputField = $(this).siblings(".quantity");
                 let currentValue = parseInt(inputField.val());
                 let rowId = inputField.data("id");
+
                 inputField.val(currentValue + 1);
 
-                cartQtyUpdate(rowId, inputField.val(), function(response){
-                    let productTotal = response.product_total;
-                    inputField.closest("tr")
-                        .find(".produt_cart_total")
-                        .text("{{ currencyPosition(":productTotal") }}"
-                        .replace(":productTotal", productTotal));
+                cartQtyUpdate(rowId, inputField.val(), function(response) {
+                    if (response.status === 'success') {
+                        inputField.val(response.qty);
+
+                        let productTotal = response.product_total;
+                        inputField.closest("tr")
+                            .find(".produt_cart_total")
+                            .text("{{ currencyPosition(':productTotal') }}"
+                                .replace(":productTotal", productTotal));
+                    } else if (response.status === 'error') {
+                        inputField.val(response.qty);
+                        toastr.error(response.message);
+                    }
                 });
             });
 
-            $('.decrement').on('click', function(){
+            $('.decrement').on('click', function() {
                 let inputField = $(this).siblings(".quantity");
                 let currentValue = parseInt(inputField.val());
                 let rowId = inputField.data("id");
 
-                if(inputField.val() > 1){
-                    inputField.val(currentValue - 1);
+                inputField.val(currentValue - 1);
 
-                    cartQtyUpdate(rowId, inputField.val(), function(response){
-                    let productTotal = response.product_total;
-                    inputField.closest("tr")
-                        .find(".produt_cart_total")
-                        .text("{{ currencyPosition(":productTotal") }}"
-                        .replace(":productTotal", productTotal));
+                if (inputField.val() >= 0) {
+
+                    cartQtyUpdate(rowId, inputField.val(), function(response) {
+                        if (response.status === 'success') {
+                            inputField.val(response.qty);
+                            
+                            let productTotal = response.product_total;
+                            inputField.closest("tr")
+                                .find(".produt_cart_total")
+                                .text("{{ currencyPosition(':productTotal') }}"
+                                    .replace(":productTotal", productTotal));
+                        } else if (response.error === 'error') {
+                            inputField.val(response.qty);
+                            toastr.error(response.message);
+                        }
+
                     });
                 }
             });
 
-            function cartQtyUpdate(rowId, qty, callback){
+            function cartQtyUpdate(rowId, qty, callback) {
                 $.ajax({
                     method: 'post',
                     url: '{{ route("cart.quantity-update") }}',
                     data: {
                         'rowId': rowId,
-                        'qty' : qty
+                        'qty': qty
                     },
-                    beforeSend: function(){
+                    beforeSend: function() {
                         showLoader();
                     },
-                    success: function(response){
-                        if(callback && typeof callback === 'function'){
+                    success: function(response) {
+                        if (callback && typeof callback === 'function') {
                             callback(response);
                         }
                     },
-                    error: function(xhr, status, error){
+                    error: function(xhr, status, error) {
                         let errorMessage = xhr.responseJSON.message;
                         hideLoader();
                         toastr.error(errorMessage);
                     },
-                    complete: function(){
+                    complete: function() {
                         hideLoader();
                     }
                 })
             }
 
-$('.remove_cart_product').on('click', function(e){
-        e.preventDefault();
-        let rowId = $(this).data('id');
-        removeCartProduct(rowId);
-        $(this).closest('tr').remove();
-        })
-        
-        function removeCartProduct(rowId){
-        $.ajax({
-        method: 'get',
-        url: '{{ route("cart-product-remove", ":rowId") }}'.replace(":rowId", rowId),
-        beforeSend: function(){
-        showLoader();
-        },
-        success: function(response){
+            $('.remove_cart_product').on('click', function(e) {
+                e.preventDefault();
+                let rowId = $(this).data('id');
+                removeCartProduct(rowId);
+                $(this).closest('tr').remove();
+            })
 
-        updateSidebarCart();
-        },
-        error: function(xhr, status, error){
-        let errorMessage = xhr.responseJSON.message;
-        hideLoader();
-        toastr.error(errorMessage);
-        },
-        complete: function(){
-        hideLoader();
-        }
-        })
-        }
+            function removeCartProduct(rowId) {
+                $.ajax({
+                    method: 'get',
+                    url: '{{ route("cart-product-remove", ":rowId") }}'.replace(":rowId", rowId),
+                    beforeSend: function() {
+                        showLoader();
+                    },
+                    success: function(response) {
+                        updateSidebarCart();
+                    },
+                    error: function(xhr, status, error) {
+                        let errorMessage = xhr.responseJSON.message;
+                        hideLoader();
+                        toastr.error(errorMessage);
+                    },
+                    complete: function() {
+                        hideLoader();
+                    }
+                })
+            }
         })
 </script>
 @endpush
