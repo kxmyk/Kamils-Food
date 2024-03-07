@@ -127,8 +127,19 @@
                     </form>
 
                     <ul class="details_button_area d-flex flex-wrap">
-                        <li><a class="common_btn v_submit_button" href="#">add to cart</a></li>
-                        <li><a class="wishlist" href="#"><i class="far fa-heart"></i></a></li>
+                        @if($product->quantity === 0)
+                        <li>
+                            <button type="button" class="common_btn bg-danger modal_cart_button">
+                                Stock out
+                            </button>
+                        </li>
+                        @else
+                        <li>
+                            <button type="submit" class="common_btn modal_cart_button">
+                                add to cart
+                            </button>
+                        </li>
+                        @endif
                     </ul>
                 </div>
             </div>
