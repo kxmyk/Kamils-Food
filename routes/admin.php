@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CouponsController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductGalleryController;
 use App\Http\Controllers\Admin\ProductOptionController;
@@ -21,14 +22,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::put('profile', [ProfileController::class, 'updateProfile'])->name('profile.update');
     Route::put('profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
 
-
     /******************* Section Title Routes *******************/
     Route::resource('slider', SliderController::class);
 
     /** Why Choose Us Routes */
     Route::put('why-choose-title-update', [WhyChooseUsController::class, 'updateTitle'])->name('why-choose-title-update');
     Route::resource('why-choose-us', WhyChooseUsController::class);
-
 
     /******************* Product Routes *******************/
     Route::resource('product', ProductController::class);
@@ -47,8 +46,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     /** Product Option Routes */
     Route::resource('product-option', ProductOptionController::class);
 
-    /** Settings Routes */
+    /******************* Settings Routes *******************/
     Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
     Route::put('/general-settings', [SettingsController::class, 'updateGeneralSettings'])->name('general-settings.update');
+
+    /******************* Product Routes *******************/
+    Route::resource('/coupon', CouponsController::class);
 
 });
