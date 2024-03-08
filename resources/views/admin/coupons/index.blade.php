@@ -6,9 +6,9 @@
   </div>
   <div class='card card-primary'>
     <div class='card-header'>
-      <h4>All Products</h4>
+      <h4>All Coupons</h4>
       <div class='card-header-action'>
-        <a href='{{ route('admin.product.create') }}' class='btn btn-primary'>
+        <a href='{{ route('admin.coupon.create') }}' class='btn btn-primary'>
           Create new
         </a>
       </div>
