@@ -77,4 +77,9 @@
         $('.overlay').removeClass('active');
         $('.overlay-container').addClass('d-none');
     }
+
+    function getCartTotal(){
+        return parseInt("{{ cartTotal() }}");
+    }
+
 </script>
