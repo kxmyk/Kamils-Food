@@ -11,7 +11,7 @@ use Illuminate\View\View;
 
 class DeliveryAreaController extends Controller
 {
-    public function index(DeliveryAreaDataTable $deliveryAreaDataTable): View
+    public function index(DeliveryAreaDataTable $deliveryAreaDataTable)
     {
         return $deliveryAreaDataTable->render('admin.delivery-area.index');
     }
