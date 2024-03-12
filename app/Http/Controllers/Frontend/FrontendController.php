@@ -67,7 +67,6 @@ class FrontendController extends Controller
 
     public function applyCoupon(Request $request)
     {
-
         $subtotal = $request->subtotal;
         $code = $request->code;
 
@@ -90,11 +89,22 @@ class FrontendController extends Controller
         }
 
         $finalTotal = $subtotal - $discount;
-
         session()->put('coupon', ['code' => $code, 'discount' => $discount]);
 
-        return response(['message' => 'Coupon Applied Successfully.', 'discount' => $discount, 'finalTotal' => $finalTotal]);
-
+        return response(['message' => 'Coupon Applied Successfully.', 'discount' => $discount, 'finalTotal' => $finalTotal, 'coupon_code' => $code]);
     }
 
+    public function destroyCoupon()
+    {
+        try {
+            session()->forget('coupon');
+
+            return response(['message' => 'Coupon Removed!', 'grand_cart_total' => grandCartTotal()]);
+        } catch (\Exception $e) {
+            logger($e);
+
+            return response(['message' => 'Something went wrong']);
+
+        }
+    }
 }
