@@ -75,4 +75,24 @@ if (!function_exists('productTotal')) {
 
         return $total;
     }
+
+    /** grand cart total */
+    if (!function_exists('grandCartTotal')) {
+        function grandCartTotal()
+        {
+            $total = 0;
+            $cartTotal = cartTotal();
+
+            if (session()->has('coupon')) {
+                $discount = session()->get('coupon')['discount'];
+                $total = $cartTotal - $discount;
+
+                return $total;
+            } else {
+                $total = $cartTotal;
+                return $total;
+            }
+        }
+    }
+
 }
