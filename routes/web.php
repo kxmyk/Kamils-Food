@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\ProfileController;
@@ -61,3 +62,8 @@ Route::get('/cart-destroy', [CartController::class, 'cartDestroy'])->name('cart.
 /******************* Coupon Routes *******************/
 Route::post('/apply-coupon', [FrontendController::class, 'applyCoupon'])->name('apply-coupon');
 Route::get('/destroy-coupon', [FrontendController::class, 'destroyCoupon'])->name('destroy-coupon');
+
+/******************* Checkout Routes *******************/
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+});
