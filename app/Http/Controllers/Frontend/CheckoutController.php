@@ -14,7 +14,21 @@ class CheckoutController extends Controller
         $deliveryAreas = DeliveryArea::where('status', 1)->get();
 
         return view('frontend.pages.checkout', compact('addresses', 'deliveryAreas'));
+    }
 
+    public function CalculateDeliveryCharge(string $id)
+    {
+        try {
+            $address = Address::findOrFail($id);
+            $deliveryFee = $address->deliveryArea?->delivery_fee;
+            $grandTotal = grandCartTotal() + $deliveryFee;
+
+            return response(['delivery_fee' => $deliveryFee, 'grand_total' => $grandTotal]);
+        } catch (\Exception $e) {
+            logger($e);
+
+            return response(['message' => 'Something Went Wrong!'], 422);
+        }
     }
 
 }
