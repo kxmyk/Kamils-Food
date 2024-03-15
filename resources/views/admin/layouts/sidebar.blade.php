@@ -82,7 +82,9 @@
             <li><a class="nav-link" href="{{ route('admin.settings.index') }}"><i class="far fa-square"></i>Settings</a>
             </li>
 
-            <li><a class="nav-link" href="{{ route('admin.payment-setting.index') }}">Payment Gateways</a></li>
+            <li><a class="nav-link" href="{{ route('admin.payment-setting.index') }}"><i
+                        class="far fa-square"></i>Payment Gateway</a>
+            </li></a></li>
 
 
             {{--            <li class="dropdown">--}}
