@@ -35,7 +35,7 @@
             <div class="col-lg-3 col-6 col-sm-4 col-md-3 wow fadeInUp" data-wow-duration="1s">
               <a class="fp__single_payment payment-card" data-name="paypal" data-bs-toggle="modal"
                 data-bs-target="#exampleModal" href="#">
-                <img src="{{ asset('frontend/images/pay_1.jpeg') }}" alt="payment method" class="img-fluid w-100">
+                <img src="{{ asset('frontend/images/pay_1.jpg') }}" alt="payment method" class="img-fluid w-100">
               </a>
             </div>
 
@@ -76,7 +76,7 @@
                         showLoader();
                     },
                     success: function(response) {
-
+                        window.location.href = response.redirect_url;
                     },
                     error: function(xhr, status, error){
                         let errors = xhr.responseJSON.errors;

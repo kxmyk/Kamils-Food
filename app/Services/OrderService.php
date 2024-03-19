@@ -16,7 +16,7 @@ class OrderService
             $order->invoice_id = generateInvoiceId();
             $order->user_id = auth()->user()->id;
             $order->address = session()->get('address');
-            $order->discount = session()->get('coupon')['discount'];
+            $order->discount = session()->get('coupon')['discount'] ?? 0;
             $order->delivery_charge = session()->get('delivery_fee');
             $order->subtotal = cartTotal();
             $order->grand_total = grandCartTotal(session()->get('delivery_fee'));
@@ -41,6 +41,9 @@ class OrderService
                 $orderItem->product_option = json_encode($product->options->product_options);
                 $orderItem->save();
             }
+
+            /** Putting the grand total amount in session */
+            session()->put('grand_total', $order->grand_total);
 
             return true;
         } catch (\Exception $e) {
