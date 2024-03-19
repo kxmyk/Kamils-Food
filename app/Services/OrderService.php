@@ -45,6 +45,9 @@ class OrderService
             /** Putting the grand total amount in session */
             session()->put('grand_total', $order->grand_total);
 
+            /** Putting the Order id in session */
+            session()->put('order_id', $order->id);
+
             return true;
         } catch (\Exception $e) {
             logger($e);

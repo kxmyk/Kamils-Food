@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Events\OrderPaymentUpdateEvent;
 use App\Http\Controllers\Controller;
 use App\Services\OrderService;
 use Illuminate\Http\Request;
@@ -40,19 +41,12 @@ class PaymentController extends Controller
             // redirect user to the payment host
             switch ($request->payment_gateway) {
                 case 'paypal':
-                    return response([
-                        'status' => 'success',
-                        'redirect_url' => route('paypal.payment'),
-                    ]);
+                    return response(['redirect_url' => route('paypal.payment')]);
+                    break;
 
                 default:
                     break;
             }
-        } else {
-            return response([
-                'status' => 'error',
-                'message' => "ay",
-            ]);
         }
     }
 
@@ -129,7 +123,20 @@ class PaymentController extends Controller
         $response = $provider->capturePaymentOrder($request->token);
 
         if (isset($response['status']) && $response['status'] === 'COMPLETED') {
-            dd('Payment Competed');
+
+            $orderId = session()->get('order_id');
+
+            $capture = $response['purchase_units'][0]['payments']['captures'][0];
+            $paymentInfo = [
+                'transaction_id' => $capture['id'],
+                'currency' => $capture['amount']['currency_code'],
+                'status' => $capture['status'],
+            ];
+
+            OrderPaymentUpdateEvent::dispatch($orderId, $paymentInfo, 'PayPal');
+
+            dd('success');
+
         }
     }
 
