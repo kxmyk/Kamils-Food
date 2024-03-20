@@ -20,6 +20,9 @@ class EventServiceProvider extends ServiceProvider
         OrderPaymentUpdateEvent::class => [
             OrderPaymentUpdateListener::class,
         ],
+        OrderPlacedNotificationEvent::class => [
+            OrderPlacedNotificationListener::class,
+        ],
     ];
 
     /**
