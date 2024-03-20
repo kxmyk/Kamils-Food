@@ -241,9 +241,10 @@
                         style="max-width:300px;">
                         <tr>
                           <td align="left" valign="top"
-                            style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px;">
+                            style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; text-align:right;">
                             <p style="font-weight: 800;">Estimated Delivery Time</p>
-                            <p>N/A</p>
+                            <p>{{ @$order->deliveryArea->min_delivery_time }} -
+                              {{ @$order->deliveryArea->max_delivery_time }}</p>
                           </td>
                         </tr>
                       </table>

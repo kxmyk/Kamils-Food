@@ -28,6 +28,8 @@ class OrderService
             $order->coupon_info = json_encode(session()->get('coupon'));
             $order->currency_name = null;
             $order->order_status = 'pending';
+            $order->delivery_area_id = session()->get('delivery_area_id');
+
             $order->save();
 
             foreach (Cart::content() as $product) {
