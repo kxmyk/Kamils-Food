@@ -36,7 +36,7 @@
 
         <h4>Transaction Faild!</h4>
         <p><b class="mx-5">{{ session()->has('errors') ? session('errors')->first('error') : '' }}</b></p>
-        <a class="common_btn mt-4" href="{{ route('dashboard') }}">Go to Payment Page</a>
+        <a class="common_btn mt-4" href="{{ route('payment.index') }}">Go to Payment Page</a>
       </div>
 
     </div>
