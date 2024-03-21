@@ -66,8 +66,8 @@
 
         <div class="form-group">
           <label>Paypal Logo</label>
-          <div id="image-preview" class="image-preview">
-            <label for="image-upload" id="image-label">Choose File</label>
+          <div id="image-preview" class="image-preview paypal-preview"> <label for="image-upload"
+              id="image-label">Choose File</label>
             <input type="file" name="paypal_logo" id="image-upload" />
           </div>
         </div>
@@ -80,7 +80,7 @@
 @push('scripts')
 <script>
   $(document).ready(function(){
-            $('.image-preview').css({
+            $('.paypal-preview').css({
                 'background-image': 'url({{ @$paymentGateway["paypal_logo"] }})',
                 'background-size': 'cover',
                 'background-position': 'center center'
