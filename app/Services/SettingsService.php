@@ -8,20 +8,20 @@ use PhpOffice\PhpSpreadsheet\Calculation\Web\Service;
 
 class SettingsService extends Service
 {
-    function setGlobalSettings(): void
+    public function setGlobalSettings(): void
     {
         $settings = $this->getSettings();
         config()->set('settings', $settings);
     }
 
-    function getSettings(): array
+    public function getSettings(): array
     {
         return Cache::rememberForever('settings', function () {
             return Settings::pluck('value', 'key')->toArray();
         });
     }
 
-    function clearCachedSettings(): void
+    public function clearCachedSettings(): void
     {
         Cache::forget('settings');
     }
