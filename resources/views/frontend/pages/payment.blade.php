@@ -32,13 +32,17 @@
       <div class="col-lg-8">
         <div class="fp__payment_area">
           <div class="row">
+            @if(config('gatewaySettings.paypal_status'))
             <div class="col-lg-3 col-6 col-sm-4 col-md-3 wow fadeInUp" data-wow-duration="1s">
               <a class="fp__single_payment payment-card" data-name="paypal" data-bs-toggle="modal"
                 data-bs-target="#exampleModal" href="#">
-                <img src="{{ asset('frontend/images/pay_1.jpg') }}" alt="payment method" class="img-fluid w-100">
+                <img src="{{ asset(config('gatewaySettings.paypal_logo')) }}" alt="payment method"
+                  class="img-fluid w-100">
               </a>
             </div>
+            @endif
 
+            @if(config('gatewaySettings.stripe_status'))
             <div class="col-lg-3 col-6 col-sm-4 col-md-3 wow fadeInUp" data-wow-duration="1s">
               <a class="fp__single_payment payment-card" data-name="stripe" data-bs-toggle="modal"
                 data-bs-target="#exampleModal" href="#">
@@ -46,7 +50,7 @@
                   class="img-fluid w-100">
               </a>
             </div>
-
+            @endif
           </div>
         </div>
       </div>

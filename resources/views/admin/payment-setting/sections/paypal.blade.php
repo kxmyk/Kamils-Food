@@ -8,8 +8,8 @@
         <div class="form-group">
           <label for="">Paypal Status</label>
           <select name="paypal_status" id="" class="select2 form-control">
-            <option @selected(@$paymentGateway['paypal_status']===1) value="1">Active</option>
-            <option @selected(@$paymentGateway['paypal_status']===0) value="0">Inactive</option>
+            <option @selected(@$paymentGateway['paypal_status']==1) value="1">Active</option>
+            <option @selected(@$paymentGateway['paypal_status']==0) value="0">Inactive</option>
           </select>
         </div>
 
@@ -66,8 +66,8 @@
 
         <div class="form-group">
           <label>Paypal Logo</label>
-          <div id="image-preview" class="image-preview paypal-preview"> <label for="image-upload"
-              id="image-label">Choose File</label>
+          <div id="image-preview" class="image-preview paypal-preview">
+            <label for="image-upload" id="image-label">Choose File</label>
             <input type="file" name="paypal_logo" id="image-upload" />
           </div>
         </div>
