@@ -54,11 +54,18 @@ class PaymentController extends Controller
             // redirect user to the payment host
             switch ($request->payment_gateway) {
                 case 'paypal':
-                    return response(['redirect_url' => route('paypal.payment')]);
+                    return response([
+                        'status' => 'success',
+                        'redirect_url' => route('paypal.payment'),
+                    ]
+                    );
                     break;
 
                 case 'stripe':
-                    return response(['redirect_url' => route('stripe.payment')]);
+                    return response([
+                        'status' => 'success',
+                        'redirect_url' => route('stripe.payment'),
+                    ]);
                     break;
 
                 default:

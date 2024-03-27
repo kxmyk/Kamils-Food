@@ -28,8 +28,7 @@ class OrderService
             $order->coupon_info = json_encode(session()->get('coupon'));
             $order->currency_name = null;
             $order->order_status = 'pending';
-            $order->delivery_area_id = session()->get('delivery_area_id');
-
+            $order->address_id = session()->get('address_id');
             $order->save();
 
             foreach (Cart::content() as $product) {
@@ -44,11 +43,11 @@ class OrderService
                 $orderItem->save();
             }
 
-            /** Putting the grand total amount in session */
-            session()->put('grand_total', $order->grand_total);
-
             /** Putting the Order id in session */
             session()->put('order_id', $order->id);
+
+            /** Putting the grand total amount in session */
+            session()->put('grand_total', $order->grand_total);
 
             return true;
         } catch (\Exception $e) {
@@ -68,6 +67,5 @@ class OrderService
         session()->forget('delivery_area_id');
         session()->forget('order_id');
         session()->forget('grand_total');
-
     }
 }

@@ -38,8 +38,8 @@ class OrderDataTable extends DataTable
             ->addColumn('payment_status', function ($query) {
                 if (strtoupper($query->payment_status) == 'COMPLETED') {
                     return '<span class="badge badge-success">COMPLETED</span>';
-                } elseif (strtoupper($query->payment_status) === 'pending') {
-                    return '<span class="badge badge-warning">Pending</span>';
+                } elseif (strtoupper($query->payment_status) == 'PENDING') {
+                    return '<span class="badge badge-warning">PENDING</span>';
                 } else {
                     return '<span class="badge badge-danger">' . $query->payment_status . '</span>';
                 }
@@ -49,7 +49,7 @@ class OrderDataTable extends DataTable
             })
 
             ->addColumn('action', function ($query) {
-                $view = "<a href='" . route('admin.slider.edit', $query->id) . "' class='btn btn-primary'><i class='fas fa-eye'></i></a>";
+                $view = "<a href='" . route('admin.orders.show', $query->id) . "' class='btn btn-primary'><i class='fas fa-eye'></i></a>";
                 $status = "<a href='" . route('admin.slider.edit', $query->id) . "' class='btn btn-warning ml-2'><i class='fas fa-truck-loading'></i></a>";
 
                 $delete = "<a href='" . route('admin.slider.destroy', $query->id) . "' class='btn btn-danger delete-item ml-2'><i class='fas fa-trash'></i></a>";

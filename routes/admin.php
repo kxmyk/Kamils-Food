@@ -57,6 +57,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     /******************* Orders Routes *******************/
     Route::get('/orders', [OrderController::class, 'index'])->name('order.index');
+    Route::get('orders/{id}', [OrderController::class, 'show'])->name('orders.show');
+
+    Route::put('orders/status-update/{id}', [OrderController::class, 'orderStatusUpdate'])->name('orders.status-update');
 
     /************** Payment Gateway Setting Routes **************/
     Route::get('/payment-gateway-setting', [PaymentGatewaySettingController::class, 'index'])->name('payment-setting.index');
