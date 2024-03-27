@@ -3,7 +3,7 @@
 @section('content')
 <section class="section">
   <div class="section-header">
-    <h1>Invoice</h1>
+    <h1>Order Preview</h1>
     <div class="section-header-breadcrumb">
       <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
       <div class="breadcrumb-item">Invoice</div>
@@ -91,14 +91,12 @@
                 </tr>
                 @foreach ($order->orderItems as $orderItem)
                 @php
-
                 $size = json_decode($orderItem->product_size);
                 $options = json_decode($orderItem->product_option);
 
                 $qty = $orderItem->qty;
                 $untiPrice = $orderItem->unit_price;
                 $sizePrice = $size[0]->price;
-
                 $optionPrice = 0;
                 foreach ($options as $optionItem) {
                 $optionPrice += $optionItem->price;
@@ -130,7 +128,7 @@
             </div>
             <div class="row mt-4">
               <div class="col-lg-8">
-                <div class="col-md-4">
+                <div class="col-md-4 d-print-none">
                   <form action="{{ route('admin.orders.status-update', $order->id) }}" method="POST">
                     @csrf
                     @method('PUT')
@@ -186,10 +184,34 @@
         <div class="float-lg-left mb-lg-0 mb-3">
 
         </div>
-        <button class="btn btn-warning btn-icon icon-left"><i class="fas fa-print"></i>
+        <button class="btn btn-warning btn-icon icon-left" id="print_btn"><i class="fas fa-print"></i>
           Print</button>
       </div>
     </div>
   </div>
 </section>
 @endsection
+
+@push('scripts')
+<script>
+  $(document).ready(function(){
+        $('#print_btn').on('click', function() {
+            let printContents = $('.invoice-print').html();
+
+            let printWindow = window.open('', '', 'width=600,height=600');
+            printWindow.document.open();
+            printWindow.document.write('<html>');
+            printWindow.document.write('<link rel="stylesheet" href="{{ asset("admin/assets/modules/bootstrap/css/bootstrap.min.css") }}">');
+
+            printWindow.document.write('<body>');
+            printWindow.document.write(printContents);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+
+            printWindow.print();
+            printWindow.close();
+
+        })
+    })
+</script>
+@endpush
