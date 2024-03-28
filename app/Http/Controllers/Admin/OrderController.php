@@ -45,12 +45,26 @@ class OrderController extends Controller
         $order->save();
 
         if ($request->ajax()) {
+
             return response(['message' => 'Order Status Updated!']);
         } else {
             toastr()->success('Status Updated Successfully!');
 
             return redirect()->back();
         }
-
     }
+    public function destroy(string $id): Response
+    {
+        try {
+            $order = Order::findOrFail($id);
+            $order->delete();
+
+            return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
+        } catch (\Exception $e) {
+            logger($e);
+
+            return response(['status' => 'error', 'message' => 'something went wrong!']);
+        }
+    }
+
 }
