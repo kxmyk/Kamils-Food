@@ -426,14 +426,14 @@ $(function () {
         $(".fp_dash_personal_info").toggleClass("show");
     });
 
-    //*==========ORDER HISTORY==========
-    $(".view_invoice").on("click", function () {
-        $(".fp_dashboard_order").fadeOut();
-    });
+    // //*==========ORDER HISTORY==========
+    // $(".view_invoice").on("click", function () {
+    //     $(".fp_dashboard_order").fadeOut();
+    // });
 
-    $(".view_invoice").on("click", function () {
-        $(".fp__invoice").fadeIn();
-    });
+    // $(".view_invoice").on("click", function () {
+    //     $(".fp__invoice").fadeIn();
+    // });
 
     $(".go_back").on("click", function () {
         $(".fp_dashboard_order").fadeIn();
