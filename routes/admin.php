@@ -76,5 +76,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     /******************* Settings Routes *******************/
     Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
     Route::put('/general-settings', [SettingsController::class, 'updateGeneralSettings'])->name('general-settings.update');
+    Route::put('/pusher-setting', [SettingsController::class, 'UpdatePusherSettings'])->name('pusher-setting.update');
 
 });
